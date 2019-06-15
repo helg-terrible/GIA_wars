@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>battle</name>
+    <name>tasks_for_opponent</name>
     <sid>453199533616175</sid>
-    <event-sheet>battle_sheet</event-sheet>
+    <event-sheet>tasks_for_opponent</event-sheet>
     <size>
         <width>1920</width>
         <height>1080</height>
