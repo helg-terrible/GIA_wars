@@ -77,12 +77,14 @@
         <layout>logo.xml</layout>
         <layout>main.xml</layout>
         <layout>tasks_for_opponent.xml</layout>
+        <layout>load_game_1.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>tasks_for_opponent.xml</event-sheet>
         <event-sheet>logo_sheet.xml</event-sheet>
         <event-sheet>main_sheet.xml</event-sheet>
         <event-sheet>global_settings.xml</event-sheet>
+        <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="1">
