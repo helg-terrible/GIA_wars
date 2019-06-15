@@ -55,7 +55,7 @@
                     <properties>
                         <text>Поиск оппонента...</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Cambria,-48,700,0</font>
+                        <font>Roboto,-48,700,0</font>
                         <color>0,0,0</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -66,7 +66,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>736</x>
+                        <x>768</x>
                         <y>608</y>
                         <z>0</z>
                         <width>640</width>
