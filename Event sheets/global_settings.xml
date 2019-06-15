@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>global_settings</name>
+    <events>
+        <variable comment="Состояние игры - меню" constant="0" name="game_state" sid="908941246279164" static="0" type="text">menu</variable>
+    </events>
+</c2eventsheet>

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>logo</name>
-    <sid>456488819918767</sid>
-    <event-sheet>logo_sheet</event-sheet>
+    <name>battle</name>
+    <sid>453199533616175</sid>
+    <event-sheet>battle_sheet</event-sheet>
     <size>
         <width>1920</width>
         <height>1080</height>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Layer 0" sid="600358615734083">
+        <layer name="Layer 0" sid="252893707651649">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>0</transparent>
