@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>debug</name>
+    <events>
+        <event-group description="Замер производительности" sid="606191715425442" title="Debug" />
+        <comment></comment>
+        <variable comment="Отладка. 1 - включено, 0 - выключено" constant="0" name="debug" sid="243975072498363" static="0" type="number">0</variable>
+        <comment></comment>
+        <comment>Датчики cpu и fps</comment>
+        <comment></comment>
+        <event-block sid="776336515687547">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="445266864053383" type="Touch">
+                    <param id="0" name="Object">Sprite6</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="387432953704563" type="System">
+                    <param id="0" name="Variable">debug</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="464276998785358" type="Sprite6">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="121418286493312" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-9" name="Set value" sid="965809138213950" type="System">
+                    <param id="0" name="Variable">debug</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="376742703257482">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="398415037613479" type="Touch">
+                    <param id="0" name="Object">Sprite6</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="350680303186812" type="System">
+                    <param id="0" name="Variable">debug</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="284999346418366" type="Sprite6">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="824176652185303" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-9" name="Set value" sid="499567470273037" type="System">
+                    <param id="0" name="Variable">debug</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="980715156026155" type="cpu_fps">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="539554788311613">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="888648269369836" type="System">
+                    <param id="0" name="Variable">debug</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="369265918045844" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="650172911523495" type="cpu_fps">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="660428757829773">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="957066854050292" type="System">
+                    <param id="0" name="Variable">debug</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="323860654612734" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="411313203322132" type="cpu_fps">
+                    <param id="0" name="Text">&quot;cpu: &quot; &amp; round(cpuutilisation*1000)/10 &amp; &quot;% &quot; &amp;newline&amp; &quot;fps: &quot; &amp; fps</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="456515583490440">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="671482086858570" type="Touch">
+                    <param id="0" name="Object">sf76_white</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="975995779265772" type="sf76_white">
+                    <param id="0" name="Instance variable">class</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;heart&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="269784815964002" type="System">
+                    <param id="0" name="Variable">debug</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="347190161216088" type="System" />
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="611996885138484" type="System">
+                    <param id="0" name="Variable">heart</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="766374340162696">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="363248657611604" type="System">
+                            <param id="0" name="Variable">heart</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="498757566137755" type="System">
+                            <param id="0" name="Variable">heart</param>
+                            <param id="1" name="Value">9</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="166474993643405">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Set text" sid="842728553383900" type="sf76_white">
+                            <param id="0" name="Text">heart</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

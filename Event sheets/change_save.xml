@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>change_save</name>
+    <events>
+        <include>transitition</include>
+        <include>buttons</include>
+        <comment></comment>
+        <comment>плавный переход</comment>
+        <comment></comment>
+        <event-block sid="619673019412113">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="147213748473540" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="465848980381147" type="System">
+                    <param id="0" name="Variable">transition</param>
+                    <param id="1" name="Value">&quot;off&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Заполнение количества попыток</comment>
+        <event-block sid="601765001383309">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="632564937751250" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="898244584365493">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="707757878747375" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;heart&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="873051414000831" type="sf76_white">
+                            <param id="0" name="Text">heart</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="354463702583980">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="269212962151685" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;w_save&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="810363975245707" type="sf76_white">
+                            <param id="0" name="Text">wow_save</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="541422102412570">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="886811753963102" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;g_save&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="412646097850681" type="sf76_white">
+                            <param id="0" name="Text">game_save</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="412328112052559">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="577179098392701" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;c_save&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="348418435726019" type="sf76_white">
+                            <param id="0" name="Text">coin_save</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <comment>Установка прозрачности неактивных кнопок</comment>
+        <comment></comment>
+        <comment>Удивительное спасение</comment>
+        <event-block sid="971447383361313">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="791812493256203" type="System" />
+                <condition id="-14" name="Compare variable" sid="939600262252782" type="System">
+                    <param id="0" name="Variable">wow_save</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="233421235087748" type="buttons2">
+                    <param id="0" name="Instance variable">class</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;wow_save&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="812934208179687" type="buttons2">
+                    <param id="0" name="Opacity">60</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Быстрый счет</comment>
+        <event-block sid="476773970323315">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="438152731502013" type="System" />
+                <condition id="-14" name="Compare variable" sid="173815732632400" type="System">
+                    <param id="0" name="Variable">game_save</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="779031870194485" type="buttons2">
+                    <param id="0" name="Instance variable">class</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;game_save&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="221818205594685" type="buttons2">
+                    <param id="0" name="Opacity">60</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Спасение за монетки</comment>
+        <event-block sid="666237573672564">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="280305244869916" type="System" />
+                <condition id="-14" name="Compare variable" sid="200195933160457" type="System">
+                    <param id="0" name="Variable">coin_save</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="851006976618786" type="buttons2">
+                    <param id="0" name="Instance variable">class</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;coin_save&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="675914037150740" type="buttons2">
+                    <param id="0" name="Opacity">60</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <comment>Обработка нажатия кнопок</comment>
+        <comment></comment>
+        <comment>Нажатие &quot;Удивительное спасение&quot;</comment>
+        <event-block sid="449827994533332">
+            <conditions>
+                <condition id="17" name="On tap object" sid="642973608636960" type="Touch">
+                    <param id="0" name="Object">buttons2</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="137578563259226" type="buttons2">
+                    <param id="0" name="Instance variable">class</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;wow_save&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="157078314308494" type="System">
+                    <param id="0" name="Variable">wow_save</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="373263934862264" type="System">
+                    <param id="0" name="Variable">wow_save</param>
+                    <param id="1" name="Value">wow_save-1</param>
+                </action>
+                <action id="0" name="Set item" sid="813962272096774" type="LocalStorage">
+                    <param id="0" name="Key">&quot;wow_save&quot;</param>
+                    <param id="1" name="Value">wow_save</param>
+                </action>
+                <action id="0" name="Call function" sid="840386898110601" type="function">
+                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;on&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="825836133799399" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="975938657887834" type="System">
+                    <param id="0" name="Layout">news</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Нажатие &quot;Быстрый счет&quot;</comment>
+        <event-block sid="894314759378247">
+            <conditions>
+                <condition id="17" name="On tap object" sid="617537244819095" type="Touch">
+                    <param id="0" name="Object">buttons2</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="585723507232895" type="buttons2">
+                    <param id="0" name="Instance variable">class</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;game_save&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="714852869450656" type="System">
+                    <param id="0" name="Variable">game_save</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="385485967758994" type="System">
+                    <param id="0" name="Variable">game_save</param>
+                    <param id="1" name="Value">game_save-1</param>
+                </action>
+                <action id="0" name="Set item" sid="105815376214526" type="LocalStorage">
+                    <param id="0" name="Key">&quot;game_save&quot;</param>
+                    <param id="1" name="Value">game_save</param>
+                </action>
+                <action id="0" name="Call function" sid="602684233450065" type="function">
+                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;on&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="623206984322589" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="776639375566084" type="System">
+                    <param id="0" name="Layout">game_save</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Нажатие кнопки &quot;Спасение за монетки&quot;</comment>
+        <event-block sid="449447745025892">
+            <conditions>
+                <condition id="17" name="On tap object" sid="541171921787362" type="Touch">
+                    <param id="0" name="Object">buttons2</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="686473687285115" type="buttons2">
+                    <param id="0" name="Instance variable">class</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;coin_save&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="335923011241856" type="System">
+                    <param id="0" name="Variable">coin_save</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="242639667928682" type="System">
+                    <param id="0" name="Variable">coin_save</param>
+                    <param id="1" name="Value">coin_save-1</param>
+                </action>
+                <action id="0" name="Set item" sid="948284044800732" type="LocalStorage">
+                    <param id="0" name="Key">&quot;coin_save&quot;</param>
+                    <param id="1" name="Value">coin_save</param>
+                </action>
+                <action id="-9" name="Set value" sid="556876840317143" type="System">
+                    <param id="0" name="Variable">state_game</param>
+                    <param id="1" name="Value">&quot;coin_save&quot;</param>
+                </action>
+                <action id="0" name="Set item" sid="185125899473602" type="LocalStorage">
+                    <param id="0" name="Key">&quot;state_game&quot;</param>
+                    <param id="1" name="Value">state_game</param>
+                </action>
+                <action id="0" name="Set item" sid="972209678785760" type="LocalStorage">
+                    <param id="0" name="Key">&quot;heart&quot;</param>
+                    <param id="1" name="Value">heart</param>
+                </action>
+                <action id="0" name="Call function" sid="382706704164799" type="function">
+                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;on&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="476915411924812" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="645827203980418" type="System">
+                    <param id="0" name="Layout">coin_save</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

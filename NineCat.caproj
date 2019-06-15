@@ -1,0 +1,1272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>NineCat</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>mq4njje893h0</unique-id>
+    <saved-with-version>26900</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="brightness">Brightness</effect>
+        <effect author="Scirra" id="contrast">Contrast</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1280</width>
+        <height>720</height>
+    </window-size>
+    <pixel-rounding>1</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>logo</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">No</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Scale inner</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Percentage text</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Physics engine">Box2D web</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use iOS retina display">iPhone only</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="objects">
+            <object-type name="Keyboard" sid="281540733392883">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="LocalStorage" sid="963077898670900">
+                <plugin id="LocalStorage" />
+            </object-type>
+            <object-type name="Touch" sid="771457924639388">
+                <plugin id="Touch" />
+            </object-type>
+            <object-type name="function" sid="868382629916931">
+                <plugin id="Function" />
+            </object-type>
+            <object-type global="1" name="variables" sid="287568251609673">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="time" sid="644564280679510" type="number" />
+                    <instance-variable name="result" sid="879534496423323" type="number" />
+                    <instance-variable name="result_text" sid="938227206241454" type="string" />
+                    <instance-variable name="double_jump" sid="966519827790658" type="number" />
+                    <instance-variable comment="Хранение настройки способности для текущего уровня 1 - включено, 0 выключено" name="battle_meow" sid="661658294210837" type="number" />
+                    <instance-variable name="time_scale" sid="673699144763418" type="number" />
+                    <instance-variable name="coin_save_availability" sid="310708502210274" type="number" />
+                    <instance-variable name="next_step" sid="717978846692201" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="239612447799319" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\YandexDisk\c2\others\variables.png">
+                            <collision-poly>
+                                <point x="0.140625" y="0.140625" />
+                                <point x="0.5" y="0.0234375" />
+                                <point x="0.6875" y="0.3125" />
+                                <point x="0.9375" y="0.5" />
+                                <point x="0.90625" y="0.90625" />
+                                <point x="0.5" y="0.914063" />
+                                <point x="0.132813" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="cpu_fps" sid="325082037978491">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="building_variables" sid="994820659843783">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="Количество окон" name="windows" sid="288878453538259" type="number" />
+                    <instance-variable comment="Ширина стены" name="wall_width" sid="337452710162890" type="number" />
+                    <instance-variable comment="Высота стены" name="wall_height" sid="543207577759245" type="number" />
+                    <instance-variable comment="Позиция стены по X" name="wall_x" sid="621193066741180" type="number" />
+                    <instance-variable comment="Позиция стены по Y" name="wall_y" sid="405677130839212" type="number" />
+                    <instance-variable comment="Количество объектов на крыше" name="roof_objects" sid="961556734252981" type="number" />
+                    <instance-variable comment="Ширина крыши" name="roof_width" sid="950939543256287" type="number" />
+                    <instance-variable comment="Расстояние до следюущего здания" name="next_building_value" sid="316745992647775" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="937985493191192" speed="0">
+                        <frame duration="1" hotspotX="0.491228" hotspotY="0.474576" original-source="C:\Users\OlegR\YandexDisk\!!!\Construct\!!! NineCat\images\home_variables.png">
+                            <collision-poly>
+                                <point x="0.254386" y="0.245763" />
+                                <point x="0.491228" y="0.0169492" />
+                                <point x="0.72807" y="0.245763" />
+                                <point x="0.815789" y="0.474576" />
+                                <point x="0.815789" y="0.788136" />
+                                <point x="0.491228" y="0.822034" />
+                                <point x="0.175439" y="0.779661" />
+                                <point x="0.175439" y="0.474576" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type global="1" name="background_settings" sid="567693636734521">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type global="1" name="ary_of_gameplay_settings" sid="385548904245930">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type name="battle_meow_status" sid="595265445987186">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
+        <object-folder name="menu">
+            <object-type name="Sprite6" sid="991605389998879">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="684015882349093" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\Desktop\c2\cat2.png">
+                            <collision-poly>
+                                <point x="0.7725" y="0.5" />
+                                <point x="0.94" y="0.94" />
+                                <point x="0.5" y="0.7075" />
+                                <point x="0.3075" y="0.6925" />
+                                <point x="0.1475" y="0.5" />
+                                <point x="0.1275" y="0.1275" />
+                                <point x="0.5" y="0.0225" />
+                                <point x="0.835" y="0.165" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.7725" y="0.5" />
+                                <point x="0.94" y="0.94" />
+                                <point x="0.5" y="0.7075" />
+                                <point x="0.3075" y="0.6925" />
+                                <point x="0.1475" y="0.5" />
+                                <point x="0.1275" y="0.1275" />
+                                <point x="0.5" y="0.0225" />
+                                <point x="0.835" y="0.165" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="heart" sid="478607225939623">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="628548966657366" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sprites\heart 2.png">
+                            <collision-poly>
+                                <point x="0.15625" y="0.15625" />
+                                <point x="0.5" y="0.179688" />
+                                <point x="0.847656" y="0.152344" />
+                                <point x="0.980469" y="0.5" />
+                                <point x="0.5" y="0.855469" />
+                                <point x="0.015625" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="title" sid="635533333553872">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="664772076701748" speed="5">
+                        <frame duration="1" hotspotX="0.500703" hotspotY="0.502618" original-source="E:\C2\art\Title_Orange.png">
+                            <collision-poly>
+                                <point x="0.0604782" y="0.222798" />
+                                <point x="0.499297" y="0.165803" />
+                                <point x="0.926864" y="0.26943" />
+                                <point x="0.995781" y="0.497409" />
+                                <point x="0.966245" y="0.875648" />
+                                <point x="0.499297" y="0.725389" />
+                                <point x="0.0562588" y="0.792746" />
+                                <point x="0.0295359" y="0.497409" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="sky" sid="850434029352502">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="333577707087692" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\C2\art\Home2.png">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="0.998438" y="0.00277778" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="buttons" sid="883366446336142">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="class" sid="853592714542181" type="string" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="12" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="159504898834301" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\pause 2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\pause black.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\start black.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\start white.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\YandexDisk\c2\buttons\003.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\YandexDisk\c2\buttons\004.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\previous black.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\previous white.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\menu black.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\menu white.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\next black.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\next white.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="buttons2" sid="873564172693605">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="class" sid="752306123665974" type="string" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="7" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="689251838216023" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\Desktop\c2\buttons\change2.PNG">
+                            <collision-poly>
+                                <point x="0.0234375" y="0.0234375" />
+                                <point x="0.5" y="0" />
+                                <point x="0.976563" y="0.0234375" />
+                                <point x="1" y="0.5" />
+                                <point x="0.976563" y="0.976563" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0234375" y="0.976563" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\Desktop\c2\buttons\change3.PNG">
+                            <collision-poly>
+                                <point x="0.0234375" y="0.0234375" />
+                                <point x="0.5" y="0" />
+                                <point x="0.976563" y="0.0234375" />
+                                <point x="1" y="0.5" />
+                                <point x="0.976563" y="0.976563" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0234375" y="0.976563" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\coin button2.png">
+                            <collision-poly>
+                                <point x="0.0234375" y="0.0234375" />
+                                <point x="0.5" y="0" />
+                                <point x="0.976563" y="0.0234375" />
+                                <point x="1" y="0.5" />
+                                <point x="0.976563" y="0.976563" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0234375" y="0.976563" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\button coin save white.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\button coin save grey.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\button earn coin white.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\button earn coin grey.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="runner">
+            <object-folder name="enemies">
+                <object-type name="sparrow_base" sid="671616416781401">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="3" loop="1" name="base" pingpong="0" repeatcount="1" repeatto="0" sid="642059760898747" speed="0.5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\64\base.png">
+                                <collision-poly>
+                                    <point x="0.375" y="0" />
+                                    <point x="0.625" y="0" />
+                                    <point x="0.90625" y="0.5" />
+                                    <point x="0.75" y="0.96875" />
+                                    <point x="0.25" y="0.96875" />
+                                    <point x="0.125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\64\left.png">
+                                <collision-poly>
+                                    <point x="0.375" y="0" />
+                                    <point x="0.625" y="0" />
+                                    <point x="0.90625" y="0.5" />
+                                    <point x="0.75" y="0.96875" />
+                                    <point x="0.25" y="0.96875" />
+                                    <point x="0.125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\64\down.png">
+                                <collision-poly>
+                                    <point x="0.375" y="0" />
+                                    <point x="0.625" y="0" />
+                                    <point x="0.90625" y="0.5" />
+                                    <point x="0.75" y="0.96875" />
+                                    <point x="0.25" y="0.96875" />
+                                    <point x="0.125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="7" loop="1" name="fly" pingpong="0" repeatcount="1" repeatto="0" sid="584577220466081" speed="15">
+                            <frame duration="1" hotspotX="0.510638" hotspotY="0.967213" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fly left\0_000.png" />
+                            <frame duration="1" hotspotX="0.510638" hotspotY="0.967213" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fly left\0_001.png" />
+                            <frame duration="1" hotspotX="0.510638" hotspotY="0.967213" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fly left\0_002.png" />
+                            <frame duration="1" hotspotX="0.510638" hotspotY="0.967213" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fly left\0_003.png" />
+                            <frame duration="1" hotspotX="0.510638" hotspotY="0.967213" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fly left\0_004.png" />
+                            <frame duration="1" hotspotX="0.510638" hotspotY="0.967213" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fly left\0_005.png" />
+                            <frame duration="1" hotspotX="0.510638" hotspotY="0.967213" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fly left\0_006.png" />
+                        </animation>
+                        <animation framecount="3" loop="1" name="down" pingpong="0" repeatcount="1" repeatto="0" sid="679793628239712" speed="1">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\64\down.png">
+                                <collision-poly>
+                                    <point x="0.375" y="0" />
+                                    <point x="0.625" y="0" />
+                                    <point x="0.90625" y="0.5" />
+                                    <point x="0.75" y="0.96875" />
+                                    <point x="0.25" y="0.96875" />
+                                    <point x="0.125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\64\left.png">
+                                <collision-poly>
+                                    <point x="0.375" y="0" />
+                                    <point x="0.625" y="0" />
+                                    <point x="0.90625" y="0.5" />
+                                    <point x="0.75" y="0.96875" />
+                                    <point x="0.25" y="0.96875" />
+                                    <point x="0.125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\64\right.png">
+                                <collision-poly>
+                                    <point x="0.375" y="0" />
+                                    <point x="0.625" y="0" />
+                                    <point x="0.90625" y="0.5" />
+                                    <point x="0.75" y="0.96875" />
+                                    <point x="0.25" y="0.96875" />
+                                    <point x="0.125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="3" loop="1" name="left" pingpong="0" repeatcount="1" repeatto="0" sid="530792758038304" speed="1.5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\64\left.png">
+                                <collision-poly>
+                                    <point x="0.375" y="0" />
+                                    <point x="0.625" y="0" />
+                                    <point x="0.90625" y="0.5" />
+                                    <point x="0.75" y="0.96875" />
+                                    <point x="0.25" y="0.96875" />
+                                    <point x="0.125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\64\right.png">
+                                <collision-poly>
+                                    <point x="0.375" y="0" />
+                                    <point x="0.625" y="0" />
+                                    <point x="0.90625" y="0.5" />
+                                    <point x="0.75" y="0.96875" />
+                                    <point x="0.25" y="0.96875" />
+                                    <point x="0.125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\64\base.png">
+                                <collision-poly>
+                                    <point x="0.375" y="0" />
+                                    <point x="0.625" y="0" />
+                                    <point x="0.90625" y="0.5" />
+                                    <point x="0.75" y="0.96875" />
+                                    <point x="0.25" y="0.96875" />
+                                    <point x="0.125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="9" loop="1" name="fall" pingpong="0" repeatcount="1" repeatto="0" sid="422705399526966" speed="15">
+                            <frame duration="1" hotspotX="0.504505" hotspotY="0.963964" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fall\0_000.png" />
+                            <frame duration="1" hotspotX="0.504505" hotspotY="0.963964" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fall\0_001.png" />
+                            <frame duration="1" hotspotX="0.504505" hotspotY="0.963964" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fall\0_002.png" />
+                            <frame duration="1" hotspotX="0.504505" hotspotY="0.963964" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fall\0_003.png" />
+                            <frame duration="1" hotspotX="0.504505" hotspotY="0.963964" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fall\0_004.png" />
+                            <frame duration="1" hotspotX="0.504505" hotspotY="0.963964" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fall\0_005.png" />
+                            <frame duration="1" hotspotX="0.504505" hotspotY="0.963964" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fall\0_006.png" />
+                            <frame duration="1" hotspotX="0.504505" hotspotY="0.963964" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fall\0_007.png" />
+                            <frame duration="1" hotspotX="0.504505" hotspotY="0.963964" original-source="C:\Users\Ruslan\YandexDisk\c2\art\sparrow\animation\fall\0_008.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="hawk_base" sid="370549109647658">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable comment="Состояние персонажа (не используется)" name="hawk_state" sid="343762680174466" type="string" />
+                    </instance-variables>
+                    <animation-folder>
+                        <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="695088243617377" speed="8">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.502183" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\hawk\hawk animation\hawk 2.png">
+                                <image-point name="Claws" x="0.12" y="0.925764" />
+                                <collision-poly>
+                                    <point x="0.835" y="0.615721" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.13" y="0.615721" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.502183" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\hawk\hawk animation\hawk 3.png">
+                                <image-point name="Claws" x="0.12" y="0.925764" />
+                                <collision-poly>
+                                    <point x="0.835" y="0.615721" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.13" y="0.615721" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.502183" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\hawk\hawk animation\hawk 4.png">
+                                <image-point name="Claws" x="0.12" y="0.925764" />
+                                <collision-poly>
+                                    <point x="0.835" y="0.615721" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.13" y="0.615721" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.502183" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\hawk\hawk animation\hawk 41.png">
+                                <image-point name="Claws" x="0.12" y="0.925764" />
+                                <collision-poly>
+                                    <point x="0.835" y="0.615721" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.13" y="0.615721" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.502183" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\hawk\hawk animation\hawk 3.png">
+                                <image-point name="Claws" x="0.12" y="0.925764" />
+                                <collision-poly>
+                                    <point x="0.835" y="0.615721" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.13" y="0.615721" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.502183" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\hawk\hawk animation\hawk 31.png">
+                                <image-point name="Claws" x="0.12" y="0.925764" />
+                                <collision-poly>
+                                    <point x="0.835" y="0.615721" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.13" y="0.615721" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="dove_base" sid="562637634115337">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="609076861895345" speed="10">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\YandexDisk\c2\art\dove\1\11.png">
+                                <collision-poly>
+                                    <point x="0.72" y="0.293333" />
+                                    <point x="0.86" y="0.14" />
+                                    <point x="0.7" y="0.78" />
+                                    <point x="0.186667" y="0.773333" />
+                                    <point x="0.126666" y="0.273334" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\YandexDisk\c2\art\dove\1\31.png">
+                                <collision-poly>
+                                    <point x="0.5" y="0.06" />
+                                    <point x="0.86" y="0.14" />
+                                    <point x="0.62" y="0.886667" />
+                                    <point x="0.26" y="0.74" />
+                                    <point x="0.113333" y="0.386667" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\YandexDisk\c2\art\dove\1\21.png">
+                                <collision-poly>
+                                    <point x="0.5" y="0.06" />
+                                    <point x="0.86" y="0.14" />
+                                    <point x="0.62" y="0.886667" />
+                                    <point x="0.26" y="0.74" />
+                                    <point x="0.113333" y="0.386667" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\YandexDisk\c2\art\dove\1\21.png">
+                                <collision-poly>
+                                    <point x="0.5" y="0.06" />
+                                    <point x="0.86" y="0.14" />
+                                    <point x="0.62" y="0.886667" />
+                                    <point x="0.26" y="0.74" />
+                                    <point x="0.113333" y="0.386667" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-type name="backgrounds" sid="789769172334031">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="9" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="967931364979926" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\C2\art\Levels backgrounds\sunset1 small.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\C2\art\Levels backgrounds\sunset2 small.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\C2\art\Levels backgrounds\sunset3 small.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\C2\art\Levels backgrounds\day1 small.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\C2\art\Levels backgrounds\day2 small.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\Levels backgrounds\day3 small 2.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\C2\art\Levels backgrounds\even1 small.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\Levels backgrounds\even2 small 2.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\Levels backgrounds\night.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="bigcloud1" sid="124328213500531">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Wrap" sid="453274415128309">
+                        <behavior id="wrap" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="905680135338321">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="818852243883959" speed="5">
+                        <frame duration="1" hotspotX="0.502959" hotspotY="0.557823" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\clouds\cloud1 эксперимент.png">
+                            <collision-poly>
+                                <point x="0.0855504" y="0.328229" />
+                                <point x="0.502146" y="0.430303" />
+                                <point x="0.923319" y="0.312919" />
+                                <point x="0.99504" y="0.557895" />
+                                <point x="0.985885" y="1" />
+                                <point x="0.502146" y="0.991707" />
+                                <point x="0.0916549" y="0.767145" />
+                                <point x="0" y="0.557895" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="character" sid="387297071775701">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="16" loop="1" name="run" pingpong="0" repeatcount="1" repeatto="0" sid="468203653091675" speed="40">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_000.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_001.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_002.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_003.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_004.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_005.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_006.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_007.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_008.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_009.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_010.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_011.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_012.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_013.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_014.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\Run — копия\1_015.png" />
+                    </animation>
+                    <animation framecount="8" loop="0" name="jump_up" pingpong="0" repeatcount="1" repeatto="0" sid="547932501033066" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_000.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_001.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_002.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_003.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_004.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_005.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_006.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_007.png" />
+                    </animation>
+                    <animation framecount="8" loop="0" name="jump_down" pingpong="0" repeatcount="1" repeatto="0" sid="327827292872564" speed="15">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_008.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_009.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_010.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_011.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_012.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_013.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_014.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.722689" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\jump small\1_015.png" />
+                    </animation>
+                    <animation framecount="14" loop="1" name="fall" pingpong="0" repeatcount="1" repeatto="0" sid="993851462117051" speed="20">
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_000.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_001.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_002.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_003.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_004.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_005.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_006.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_007.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_008.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_009.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_010.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_011.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_012.png" />
+                        <frame duration="1" hotspotX="0.507813" hotspotY="0.716667" original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\Проект\fall\1_013.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="roof_object_1" sid="279862438346106">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="996752824912264">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="857779535612358">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="582286690005595" speed="0">
+                        <frame duration="0" hotspotX="0.492308" hotspotY="0.984615" original-source="C:\Users\ro\YandexDisk\!!!\Construct\!!! NineCat\images\block2.png" />
+                        <frame duration="0" hotspotX="0.492308" hotspotY="0.983333" />
+                        <frame duration="0" hotspotX="0.491667" hotspotY="0.983333" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="roof_object_2" sid="273129532721495">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="801022631895839">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="290227568376140">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="109683278818693" speed="0">
+                        <frame duration="1" hotspotX="0.507692" hotspotY="0.507692" original-source="C:\Users\ro\YandexDisk\!!!\Construct\!!! NineCat\images\block3.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="wall" sid="306311555858626">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="270894774738859">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="271415581121806">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\sprites\wall 5.png" />
+            </object-type>
+            <object-type name="character_base" sid="952379362676656">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="play - нормальное состояние, в игре. fall - падение. hawk - персонаж попал в когти ястреба" name="character_state" sid="252066944348759" type="string" />
+                    <instance-variable comment="Переменная хранит состояние двойного прыжка. 0 - прыжок не доступен, т.к. уже был использован. 1 - прыжок доступен" name="double_jump_state" sid="561691822953578" type="number" />
+                    <instance-variable comment='Хранит состояние способности &quot;боевое мяу&quot;. 1 - способность &quot;перезаряжена&quot;, 0 - нет' name="battle_meow_state" sid="426030108742423" type="number" />
+                    <instance-variable comment="высота полу-прыжка (прыжок после падения на врага сверху)" name="height_of_halfjump" sid="709001577163054" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Platform" sid="618000566041782">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="415812254492820" speed="5">
+                        <frame duration="1" hotspotX="0.515625" hotspotY="0.515625" original-source="C:\Users\Ruslan\YandexDisk\c2\character\base\caracter_base.png">
+                            <image-point name="Camera" x="1.5625" y="0.5" />
+                            <image-point name="Down" x="0.515625" y="1" />
+                            <image-point name="battle_meow" x="2.25" y="-1.375" />
+                            <image-point name="battle_meow_area" x="3.59375" y="-0.3125" />
+                            <image-point name="boom" x="1.1875" y="-0.015625" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="roof" sid="881402061399710">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="699706834141198">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="515569947537753">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="E:\C2\art\sprites\бордюр.png" />
+            </object-type>
+            <object-type name="windows" sid="770199884423156">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="526061744185520">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="428886001348043" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\C2\art\sprites\window2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\sprites\window9-1.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="wall_day" sid="636878920644939">
+                <plugin id="TiledBg" />
+                <texture original-source="E:\C2\art\sprites\wall 4.png" />
+            </object-type>
+            <object-type name="buildings1" sid="978357567418968">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="353971702492527">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <effects>
+                    <effect-type name="Brightness">
+                        <effect id="brightness" />
+                    </effect-type>
+                    <effect-type name="Contrast">
+                        <effect id="contrast" />
+                    </effect-type>
+                </effects>
+                <texture original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\здания\Здания для игры Шаблон 5.png" />
+            </object-type>
+            <object-type name="bg_windows1" sid="116852478361762">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="308487063776835">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\Ruslan\Desktop\c2\art\Cat2\здания\Здания для игры Шаблон 4 окна.png" />
+            </object-type>
+            <object-type name="buildings2" sid="807690378042288">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="379849075897863">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <effects>
+                    <effect-type name="Contrast">
+                        <effect id="contrast" />
+                    </effect-type>
+                    <effect-type name="Brightness">
+                        <effect id="brightness" />
+                    </effect-type>
+                </effects>
+                <texture original-source="E:\C2\art\здания\Здания для игры Фон 3-2.png" />
+            </object-type>
+            <object-type name="bg_windows2" sid="437216968179523">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="446651647057884">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\zrf\Desktop\Буфер\1.png" />
+            </object-type>
+            <object-type name="cloud" sid="737324273915796">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="419921686426809">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\clouds\cloud 0.png" />
+            </object-type>
+            <object-type name="coin_base" sid="738718240785756">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="250368034008540">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="Sine" sid="184481537486441">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="497553022858648" speed="5">
+                        <frame duration="1" hotspotX="0.583333" hotspotY="0.5" original-source="C:\Users\Ruslan\YandexDisk\c2\art\coins\coin.png">
+                            <collision-poly>
+                                <point x="0.166667" y="0.125" />
+                                <point x="0.5" y="0" />
+                                <point x="0.833333" y="0.125" />
+                                <point x="1" y="0.5" />
+                                <point x="0.833333" y="0.875" />
+                                <point x="0.5" y="1" />
+                                <point x="0.166667" y="0.875" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="sunset_rays" sid="977236616275024">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="Brightness">
+                        <effect id="brightness" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="733309492537077" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Ruslan\YandexDisk\c2\art\clouds\18939780 sunset 2.png">
+                            <collision-poly>
+                                <point x="0.323438" y="0.636923" />
+                                <point x="0.5" y="0.713846" />
+                                <point x="0.692187" y="0.606154" />
+                                <point x="0.5" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="splash" sid="740683160425222">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="492184033670424">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="Fade" sid="822087851020892">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="9" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="919143683659763" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.510638" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\boom\cloud1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\boom\cloud2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.517241" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\boom\line1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.517241" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\boom\line2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.517241" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\boom\star1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.510638" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\boom\cloud1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.517241" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\boom\line1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.517241" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\boom\line2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.517241" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\boom\star1.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="explosion_splash" sid="602131021062356">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="530444404775942">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="962538126915129" speed="5">
+                        <frame duration="1" hotspotX="0.495283" hotspotY="0.496599" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\boom\boom.png">
+                            <collision-poly>
+                                <point x="0.153302" y="0.19927" />
+                                <point x="0.5" y="0.271445" />
+                                <point x="0.877653" y="0.159173" />
+                                <point x="0.945755" y="0.49599" />
+                                <point x="0.828125" y="0.776672" />
+                                <point x="0.5" y="0.969139" />
+                                <point x="0.326651" y="0.576185" />
+                                <point x="0.0418632" y="0.49599" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="battle_meow_area" sid="125625464695756">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="800817966293394">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="984253167470147" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\boom\meow 5.png">
+                            <collision-poly>
+                                <point x="0" y="0.240196" />
+                                <point x="0.763636" y="0" />
+                                <point x="0.940909" y="0.323529" />
+                                <point x="0.929545" y="0.671569" />
+                                <point x="0.763637" y="1" />
+                                <point x="0" y="0.794118" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="coin_big" sid="863929537754428">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="970507241781743" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\YandexDisk\c2\art\coins\coin big.png">
+                            <collision-poly>
+                                <point x="0.15625" y="0.116279" />
+                                <point x="0.5" y="0" />
+                                <point x="0.84375" y="0.116279" />
+                                <point x="1" y="0.488372" />
+                                <point x="0.84375" y="0.883721" />
+                                <point x="0.5" y="1" />
+                                <point x="0.15625" y="0.883721" />
+                                <point x="0" y="0.488372" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="fonts">
+            <object-type name="sf39" sid="426053883391754">
+                <plugin id="Spritefont2" />
+                <instance-variables>
+                    <instance-variable name="class" sid="672223120093530" type="string" />
+                </instance-variables>
+                <texture original-source="E:\C2\art\font\SpriteFont_PressStart2P_Bold_(36)_[0,0,0]_39x39.png" />
+            </object-type>
+            <object-type name="sf76" sid="983890785256725">
+                <plugin id="Spritefont2" />
+                <instance-variables>
+                    <instance-variable name="class" sid="511344307851279" type="string" />
+                    <instance-variable name="value" sid="979827174700416" type="number" />
+                    <instance-variable comment="Нумерация" name="number" sid="662417129831457" type="number" />
+                </instance-variables>
+                <texture original-source="E:\C2\art\font\SpriteFont_PressStart2P_Bold_(72)_[0,0,0]_76x76.png" />
+            </object-type>
+            <object-type name="sf76_white" sid="145717721130354">
+                <plugin id="Spritefont2" />
+                <instance-variables>
+                    <instance-variable name="class" sid="827515114977774" type="string" />
+                    <instance-variable name="value" sid="388280779456700" type="number" />
+                    <instance-variable name="number" sid="593462735369367" type="number" />
+                </instance-variables>
+                <texture original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\font\SpriteFont_RFKrabuler_Regular_(72)_[0,0,0]_64x85.png" />
+            </object-type>
+        </object-folder>
+        <object-folder name="game_save">
+            <object-type global="1" name="ary_of_numbers" sid="908943035437931">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type name="game_save_variables" sid="201560391632729">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment='Переменная для хранения текущего состояния игры &quot;Быстрый счет&quot;' name="game_save_state" sid="971607328902365" type="string" />
+                    <instance-variable comment="Количество примеров" name="count_of_examples" sid="113149521845487" type="number" />
+                    <instance-variable comment="Время на пример. Зависит от уровня сложности" name="time_to_example" sid="103271073326859" type="number" />
+                    <instance-variable comment="Правильный ответ" name="correct_answer" sid="323510711374405" type="number" />
+                    <instance-variable comment="Позиция правильного ответа. Задается рандомно" name="correct_answer_position" sid="581634728422471" type="number" />
+                    <instance-variable name="current_index" sid="810998563651543" type="number" />
+                    <instance-variable comment="Номер текущего примера" name="current_example" sid="402618616775778" type="number" />
+                    <instance-variable comment="Значение первого операнда" name="op1" sid="609858622283023" type="number" />
+                    <instance-variable comment="Значение второго операнда" name="op2" sid="715396282052365" type="number" />
+                    <instance-variable comment="Значение третьего операнда" name="op3" sid="908190412245683" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="753394406625474" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type global="1" name="ary_of_characters" sid="635000687843035">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type global="1" name="ary_of_game_save_difficult" sid="518662910851262">
+                <plugin id="Arr" />
+            </object-type>
+        </object-folder>
+        <object-type name="DistanceDisplay" sid="107166316862586">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="text" sid="579568416136192">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="class" sid="481518748114462" type="string" />
+                <instance-variable name="value" sid="179652103803412" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Flash" sid="438270666439209">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="text_x" sid="988091537821385">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="gs_message" sid="946923880964230">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="654655346256202" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="text_result" sid="496597081171359">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="class" sid="385964206340561" type="string" />
+                <instance-variable name="value" sid="359061244468384" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="round_distance" sid="871776413494104">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TiledBackground" sid="984315013851048">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="TiledBackground2" sid="893578992024056">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type global="1" name="times" sid="356532800133298">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type global="1" name="interface_languages" sid="332473216580951">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type global="1" name="heart_settings" sid="772703759390588">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Sprite" sid="797172729925061">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="804114647717888" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="newspaper" sid="622811296901025">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="740744185550960" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\news\News 3.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="0.976563" y="0.971875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0234375" y="0.971875" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="think" sid="285218108119135">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="287442777462355" speed="5">
+                    <frame duration="1" hotspotX="0.501683" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\Быстрый счет\think2.png">
+                        <collision-poly>
+                            <point x="0.141414" y="0.148936" />
+                            <point x="0.498316" y="0.0248227" />
+                            <point x="0.83165" y="0.177305" />
+                            <point x="0.942761" y="0.5" />
+                            <point x="0.676768" y="0.659574" />
+                            <point x="0.498316" y="0.975177" />
+                            <point x="0.262626" y="0.723404" />
+                            <point x="0.131313" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="formuls" sid="906747425449430">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="7" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="575707339250162" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503497" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\Быстрый счет\f1.PNG" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\Быстрый счет\f2.PNG" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503401" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\Быстрый счет\f3.PNG" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\Быстрый счет\f4.PNG" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\Быстрый счет\f5.PNG" />
+                    <frame duration="1" hotspotX="0.502058" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\Быстрый счет\f6.PNG" />
+                    <frame duration="1" hotspotX="0.502994" hotspotY="0.502674" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\Быстрый счет\f7.PNG" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="line" sid="431073812705430">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Wrap" sid="283193254423694">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="671185234708641">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="952482425054161" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="505553970837475">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="609400699720544" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="news_photo" sid="758577531369175">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="893904655640757" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\news\O news 1.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.5" y="0.0552885" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.5" y="0.646635" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="arrow" sid="762096983821589">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="403502742667360" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="arrow2" sid="630933464049961">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="999276412844224" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="crabuler" sid="213251966811671">
+            <plugin id="Spritefont2" />
+            <texture original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\font\SpriteFont_RFKrabuler_Regular_(72)_[0,0,0]_64x85.png" />
+        </object-type>
+        <object-type global="1" name="font" sid="303896907482714">
+            <plugin id="Arr" />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="sparrows" plugin-id="Sprite" sid="550297444561750">
+            <members>
+                <member>sparrow_base</member>
+            </members>
+            <instance-variables>
+                <instance-variable comment='Состояние группы воробьев. &quot;Off&quot; - значение по умолчанию. &quot;Run&quot; - бегство. ' name="state_sparrows" sid="574839104999403" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Platform" sid="388774948331016">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="doves" plugin-id="Sprite" sid="671250836183019">
+            <members>
+                <member>dove_base</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="state_doves" sid="883330496838255" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="876035843292062">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="320299176941686">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="hawks" plugin-id="Sprite" sid="871636616173023">
+            <members>
+                <member>hawk_base</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Bullet" sid="787343978494513">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="enemies" plugin-id="Sprite" sid="392925229040304">
+            <members>
+                <member>dove_base</member>
+                <member>hawk_base</member>
+                <member>sparrow_base</member>
+            </members>
+            <instance-variables>
+                <instance-variable comment="соятояние участника семьи. 1 - мертв, 0 - жив, 2 - заготовка за пределами камеры" name="dead_enemies" sid="363709985621202" type="number" />
+                <instance-variable comment="состояние участника семьи" name="state_enemies" sid="260030336463332" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet2" sid="461472937714254">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>logo.xml</layout>
+        <layout>menu.xml</layout>
+        <layout>levels.xml</layout>
+        <layout>game.xml</layout>
+        <layout>change_save.xml</layout>
+        <layout>game_save.xml</layout>
+        <layout>coin_save.xml</layout>
+        <layout>news.xml</layout>
+        <layout>end_game.xml</layout>
+        <layout>game_over_first.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>menu.xml</event-sheet>
+        <event-sheet>levels.xml</event-sheet>
+        <event-sheet>change_save.xml</event-sheet>
+        <event-sheet>game_save.xml</event-sheet>
+        <event-sheet>end_game.xml</event-sheet>
+        <event-sheet>logo.xml</event-sheet>
+        <event-sheet>game_mech.xml</event-sheet>
+        <event-sheet>debug.xml</event-sheet>
+        <event-sheet>storage.xml</event-sheet>
+        <event-sheet>news.xml</event-sheet>
+        <event-sheet>buttons.xml</event-sheet>
+        <event-sheet>coin_save.xml</event-sheet>
+        <event-sheet>game_over_first.xml</event-sheet>
+        <event-sheet>transitition.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="4">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="5" />
+        <global-instance type="LocalStorage" uid="64" />
+        <global-instance type="function" uid="81" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

@@ -1,0 +1,1417 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>game_save</name>
+    <events>
+        <include>transitition</include>
+        <include>buttons</include>
+        <comment></comment>
+        <comment></comment>
+        <comment>При старте уровня определяем:  количество примеров, время на один пример, значение операндов и знак операции</comment>
+        <comment>Нулевым элементом массива операндов установим 5</comment>
+        <event-block sid="217556334296690">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="865878128704942" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="645038367953109" type="function">
+                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;off&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="180803631910918" type="function">
+                    <param id="0" name="Name">&quot;close_result_window&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="5" name="Set frame" sid="186957798742782" type="backgrounds">
+                    <param id="0" name="Frame number">9 - heart</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>В зависимости от количества попыток, установим количество примеров</comment>
+                <event-block sid="366507508621574">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="709081681098479" type="System">
+                            <param id="0" name="Variable">game_save</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="422023881570206" type="game_save_variables">
+                            <param id="0" name="Instance variable">count_of_examples</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>при старте уровня установим общее количество примеров</comment>
+                        <event-block sid="447339165625956">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="320965805514679" type="sf76_white">
+                                    <param id="0" name="Instance variable">class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;count_example_text1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="558661566351899" type="sf76_white">
+                                    <param id="0" name="Text">str(game_save_variables.count_of_examples) &amp; &quot;/&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="572151558599032">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="409895682434446" type="System">
+                            <param id="0" name="Variable">game_save</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="364162076241177" type="game_save_variables">
+                            <param id="0" name="Instance variable">count_of_examples</param>
+                            <param id="1" name="Value">7</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="419211025275142">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="555344158215372" type="sf76_white">
+                                    <param id="0" name="Instance variable">class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;count_example_text1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="486005394718195" type="sf76_white">
+                                    <param id="0" name="Text">str(game_save_variables.count_of_examples) &amp; &quot;/&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="594158163631764">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="802013722943214" type="System">
+                            <param id="0" name="Variable">game_save</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="881287571495347" type="game_save_variables">
+                            <param id="0" name="Instance variable">count_of_examples</param>
+                            <param id="1" name="Value">9</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="789116045859367">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="911160565140184" type="sf76_white">
+                                    <param id="0" name="Instance variable">class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;count_example_text1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="212255880204794" type="sf76_white">
+                                    <param id="0" name="Text">str(game_save_variables.count_of_examples) &amp; &quot;/&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <comment>Выделим 3 уровня сложности, по значению счетчика текущего примера: </comment>
+                <comment>0 - если значение переменной current_example 0, 1</comment>
+                <comment>1 - если значение переменной current_example 2, 3, 4</comment>
+                <comment>2 - если значение переменной current_example 5, 6, 7, 8, 9</comment>
+                <comment></comment>
+                <comment>Установим границы операндов для примеров разной сложности</comment>
+                <event-block sid="740098438193802">
+                    <conditions />
+                    <actions>
+                        <action id="3" name="Set at XY" sid="238779239476087" type="ary_of_game_save_difficult">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="477486374947508" type="ary_of_game_save_difficult">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="935072184949536">
+                    <conditions />
+                    <actions>
+                        <action id="3" name="Set at XY" sid="901581802836974" type="ary_of_game_save_difficult">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">10</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="407440123091914" type="ary_of_game_save_difficult">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">30</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="167925529172560">
+                    <conditions />
+                    <actions>
+                        <action id="3" name="Set at XY" sid="432517487571255" type="ary_of_game_save_difficult">
+                            <param id="0" name="X">2</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">30</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="270899829064784" type="ary_of_game_save_difficult">
+                            <param id="0" name="X">2</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">99</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment></comment>
+                <comment></comment>
+                <comment>Меняем состояние игры на &quot;next_example&quot;</comment>
+                <event-block sid="562861456767840">
+                    <conditions />
+                    <actions>
+                        <action id="-10" name="Set value" sid="184453050467355" type="game_save_variables">
+                            <param id="0" name="Instance variable">game_save_state</param>
+                            <param id="1" name="Value">&quot;next_example&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <comment>Обновляем текстовое значение спрайта sf76. В значение пишем количество оставшихся примеров</comment>
+        <event-block sid="975797176563862">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="276029834362445" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <comment></comment>
+        <comment>Состояние next_example - гененрируем следующий пример</comment>
+        <comment></comment>
+        <event-block sid="364435405566128">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="416698059480289" type="game_save_variables">
+                    <param id="0" name="Instance variable">game_save_state</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;next_example&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>Закрываем окно результата, уменьшаем количество примеров на 1, устанавливаем время на 1 пример, в зависимости от количества попыток</comment>
+                <event-block sid="464487721320962">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="214889954260650" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="139655454628616" type="function">
+                            <param id="0" name="Name">&quot;close_result_window&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="910029828583182">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="531635058453396" type="System">
+                                    <param id="0" name="Variable">game_save</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="591791186844096" type="game_save_variables">
+                                    <param id="0" name="Instance variable">time_to_example</param>
+                                    <param id="1" name="Value">11</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="358484254817419">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="680039797909610" type="System">
+                                    <param id="0" name="Variable">game_save</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="787688282540136" type="game_save_variables">
+                                    <param id="0" name="Instance variable">time_to_example</param>
+                                    <param id="1" name="Value">9</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="609750642819249">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="539017332390959" type="System">
+                                    <param id="0" name="Variable">game_save</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="282991654264298" type="game_save_variables">
+                                    <param id="0" name="Instance variable">time_to_example</param>
+                                    <param id="1" name="Value">8</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <comment>Готовим массив с данными для не правильных ответов</comment>
+                <event-block sid="803346522206609">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="944512835684014" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="841098545751109" type="function">
+                            <param id="0" name="Name">&quot;set_array_of_wrong_answers&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment></comment>
+                <comment>Определяем уровень сложности и собираем выражение, согласно уровню сложности</comment>
+                <comment>0</comment>
+                <event-block sid="237642740440307">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="411397254413822" type="System">
+                            <param id="0" name="First value">function.Call(&quot;get_the_current_difficulty_level&quot;)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment></comment>
+                        <comment>Определяем знак</comment>
+                        <event-block sid="931516569842957">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="153652552089591" type="sf76_white">
+                                    <param id="0" name="Instance variable">class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;character&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="191678524747467" type="sf76_white">
+                                    <param id="0" name="Instance variable">number</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="464691987035775" type="sf76_white">
+                                    <param id="0" name="Text">choose(&quot;+&quot;, &quot;-&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <comment>Определяем значения операндов</comment>
+                        <event-block sid="962726256334880">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="560219895272829" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="217286013847224" type="game_save_variables">
+                                    <param id="0" name="Instance variable">op1</param>
+                                    <param id="1" name="Value">floor(random(ary_of_game_save_difficult.At(0, 0), ary_of_game_save_difficult.At(0, 1) )) </param>
+                                </action>
+                                <action id="-10" name="Set value" sid="842414936661376" type="game_save_variables">
+                                    <param id="0" name="Instance variable">op2</param>
+                                    <param id="1" name="Value">floor(random(ary_of_game_save_difficult.At(0, 0), game_save_variables.op1))</param>
+                                </action>
+                                <action id="0" name="Call function" sid="237615987391088" type="function">
+                                    <param id="0" name="Name">&quot;set_operands_to_text&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <comment>Считаем правильный ответ и определяем его положение на игровом поле</comment>
+                        <event-block sid="497875097381849">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="201563290002787" type="function">
+                                    <param id="0" name="Name">&quot;calculate_the_correct_answer&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <comment>Установим неправильные ответы</comment>
+                        <event-block sid="682536301545969">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="818369471862810" type="function">
+                                    <param id="0" name="Name">&quot;set_wrong_answers&quot;</param>
+                                    <param id="1" name="Parameter {n}">game_save_variables.op1 &gt; game_save_variables.op2 ? game_save_variables.op1 :game_save_variables.op2{###}game_save_variables.correct_answer + function.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>1</comment>
+                <event-block sid="940420491258431">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="188365923920536" type="System">
+                            <param id="0" name="First value">function.Call(&quot;get_the_current_difficulty_level&quot;)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Определяем знак</comment>
+                        <event-block sid="934113644753355">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="493575473788600" type="sf76_white">
+                                    <param id="0" name="Instance variable">class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;character&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="566364314423884" type="sf76_white">
+                                    <param id="0" name="Instance variable">number</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="202873130999834" type="sf76_white">
+                                    <param id="0" name="Text">choose(&quot;+&quot;, &quot;-&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <comment>Определяем значения операндов</comment>
+                        <event-block sid="844793447933931">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="403625055457862" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="452549737786848" type="game_save_variables">
+                                    <param id="0" name="Instance variable">op1</param>
+                                    <param id="1" name="Value">floor(random(ary_of_game_save_difficult.At(1, 0), ary_of_game_save_difficult.At(1, 1) )) </param>
+                                </action>
+                                <action id="-10" name="Set value" sid="572317989346667" type="game_save_variables">
+                                    <param id="0" name="Instance variable">op2</param>
+                                    <param id="1" name="Value">floor(random(ary_of_game_save_difficult.At(1, 0), game_save_variables.op1))</param>
+                                </action>
+                                <action id="0" name="Call function" sid="311939123220614" type="function">
+                                    <param id="0" name="Name">&quot;set_operands_to_text&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <comment>Считаем правильный ответ и определяем его положение на игровом поле</comment>
+                        <event-block sid="711641454080419">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="865497788614126" type="function">
+                                    <param id="0" name="Name">&quot;calculate_the_correct_answer&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <comment>Установим неправильные ответы</comment>
+                        <event-block sid="755554046127557">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="944178551111335" type="function">
+                                    <param id="0" name="Name">&quot;set_wrong_answers&quot;</param>
+                                    <param id="1" name="Parameter {n}">game_save_variables.op1 &gt; game_save_variables.op2 ? game_save_variables.op1 :game_save_variables.op2{###}game_save_variables.correct_answer + function.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>2</comment>
+                <event-block sid="116036247968891">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="601592534831622" type="System">
+                            <param id="0" name="First value">function.Call(&quot;get_the_current_difficulty_level&quot;)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Определяем знак</comment>
+                        <event-block sid="125236054868258">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="323802333034061" type="sf76_white">
+                                    <param id="0" name="Instance variable">class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;character&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="788737477875785" type="sf76_white">
+                                    <param id="0" name="Instance variable">number</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="273999848450167" type="sf76_white">
+                                    <param id="0" name="Text">choose(&quot;+&quot;, &quot;-&quot;, &quot;*&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <comment>Определяем значения операндов в зависимости от знака операции</comment>
+                        <event-block sid="591177931652312">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="273248758116389" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="842148813572997" type="sf76_white">
+                                    <param id="0" name="Instance variable">class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;character&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="460663224445987" type="sf76_white">
+                                    <param id="0" name="Instance variable">number</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>Если плюс или минус, тогда для op1 слуйчайным образом найдем число с границами из массива ary_of_game_save_difficult (2,0) и (2,1)</comment>
+                                <comment>Для op2 будет случайное число между 30 (2, 0) и границей (2,1) - op1. Сделано для того, чтобы правильный результат не был больше 99</comment>
+                                <event-block sid="664532006481428">
+                                    <conditions>
+                                        <condition id="0" name="Compare text" sid="341039098332811" type="sf76_white">
+                                            <param id="0" name="Text to compare">&quot;+&quot;</param>
+                                            <param id="1" name="Case sensitivity">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="316060814852248" type="game_save_variables">
+                                            <param id="0" name="Instance variable">op1</param>
+                                            <param id="1" name="Value">floor(random(ary_of_game_save_difficult.At(2, 0), ary_of_game_save_difficult.At(2, 1) )) </param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="556416303169038" type="game_save_variables">
+                                            <param id="0" name="Instance variable">op2</param>
+                                            <param id="1" name="Value">floor(random(0,  (ary_of_game_save_difficult.At(2,1) - game_save_variables.op1))) </param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="828716799620476">
+                                    <conditions>
+                                        <condition id="0" name="Compare text" sid="713566244328489" type="sf76_white">
+                                            <param id="0" name="Text to compare">&quot;-&quot;</param>
+                                            <param id="1" name="Case sensitivity">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="484868383205800" type="game_save_variables">
+                                            <param id="0" name="Instance variable">op1</param>
+                                            <param id="1" name="Value">floor(random(ary_of_game_save_difficult.At(2, 0), ary_of_game_save_difficult.At(2, 1) )) </param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="382974135947575" type="game_save_variables">
+                                            <param id="0" name="Instance variable">op2</param>
+                                            <param id="1" name="Value">floor(random(ary_of_game_save_difficult.At(2, 0), game_save_variables.op1))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment></comment>
+                                <event-block any="1" sid="766298270683142">
+                                    <conditions>
+                                        <condition id="0" name="Compare text" sid="356702679168300" type="sf76_white">
+                                            <param id="0" name="Text to compare">&quot;*&quot;</param>
+                                            <param id="1" name="Case sensitivity">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="498411243463337" type="game_save_variables">
+                                            <param id="0" name="Instance variable">op1</param>
+                                            <param id="1" name="Value">floor(random(ary_of_game_save_difficult.At(0, 0), ary_of_game_save_difficult.At(0, 1) )) </param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="928379640499139" type="game_save_variables">
+                                            <param id="0" name="Instance variable">op2</param>
+                                            <param id="1" name="Value">floor(random(ary_of_game_save_difficult.At(0, 0), game_save_variables.op1)) </param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment></comment>
+                        <comment>Записываем значения операндов в спрайты</comment>
+                        <event-block sid="158667969662631">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="124816322940325" type="function">
+                                    <param id="0" name="Name">&quot;set_operands_to_text&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Считаем правильный ответ и определяем его положение на игровом поле</comment>
+                        <event-block sid="288349564670754">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="981764794853752" type="function">
+                                    <param id="0" name="Name">&quot;calculate_the_correct_answer&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <comment>Установим неправильные ответы</comment>
+                        <event-block sid="567771627641573">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="107810864593012" type="function">
+                                    <param id="0" name="Name">&quot;set_wrong_answers&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <comment></comment>
+                <comment>Меняем состояние игры на wait - ожидание игрока</comment>
+                <event-block sid="529643430860022">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="959902571784443" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="794549735062042" type="game_save_variables">
+                            <param id="0" name="Instance variable">game_save_state</param>
+                            <param id="1" name="Value">&quot;wait&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Добавляем 1 к переменной current_example и вычитаем 1 из count_of_example</comment>
+                <event-block sid="501698448038238">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="510627799342961" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="558774391948172" type="game_save_variables">
+                            <param id="0" name="Instance variable">current_example</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="534624494005233" type="game_save_variables">
+                            <param id="0" name="Instance variable">count_of_examples</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>обновим текстовое значение количества примеров</comment>
+                        <event-block sid="942115372696821">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="545059938104527" type="sf76_white">
+                                    <param id="0" name="Instance variable">class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;count_example_text2&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="728899397447303" type="sf76_white">
+                                    <param id="0" name="Text">str(game_save_variables.current_example)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <comment>Состояние wait - отсчет таймера, ожидание нажатия результата</comment>
+        <comment></comment>
+        <event-block sid="608322706330340">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="156425583854830" type="game_save_variables">
+                    <param id="0" name="Instance variable">game_save_state</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;wait&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment></comment>
+                <event-block sid="692363939954183">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="890162330544653" type="game_save_variables">
+                            <param id="0" name="Instance variable">time_to_example</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="343814684020634" type="System">
+                            <param id="0" name="Interval (seconds)">dt * 60</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="482366353356200" type="game_save_variables">
+                            <param id="0" name="Instance variable">time_to_example</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment></comment>
+                <event-block sid="828914525428472">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="947443433385817" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;time&quot;</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="508027246018209" type="System">
+                            <param id="0" name="Interval (seconds)">dt * 60</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="696731140561071" type="sf76_white">
+                            <param id="0" name="Text">game_save_variables.time_to_example</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment></comment>
+                <comment>Обработка нажатий</comment>
+                <comment>Правильный ответ</comment>
+                <event-block sid="506429062685946">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="677278416981808" type="Touch">
+                            <param id="0" name="Object">sf76_white</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="495864728588043" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ans&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="945488009826503" type="game_save_variables">
+                            <param id="0" name="Instance variable">time_to_example</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="334029756849734" type="sf76_white">
+                            <param id="0" name="Instance variable">value</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">game_save_variables.correct_answer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="598654488690992" type="function">
+                            <param id="0" name="Name">&quot;set_result_text&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Верно! Следующий пример...&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="570003998481706" type="System">
+                            <param id="0" name="Seconds">0.3</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="584817534064839" type="game_save_variables">
+                            <param id="0" name="Instance variable">game_save_state</param>
+                            <param id="1" name="Value">&quot;win&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment></comment>
+                <comment>Неправильный ответ</comment>
+                <event-block sid="394135363741456">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="230306358018013" type="Touch">
+                            <param id="0" name="Object">sf76_white</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="647246806422035" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ans&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="834020621749758" type="sf76_white">
+                            <param id="0" name="Instance variable">value</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">game_save_variables.correct_answer</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="243981462279148" type="game_save_variables">
+                            <param id="0" name="Instance variable">time_to_example</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="265464953099105" type="function">
+                            <param id="0" name="Name">&quot;set_result_text&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Ответ не верный!&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="978866016584851" type="System">
+                            <param id="0" name="Seconds">0.3</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="260141399128409" type="game_save_variables">
+                            <param id="0" name="Instance variable">game_save_state</param>
+                            <param id="1" name="Value">&quot;fail&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment></comment>
+                <comment>Если время закончилось</comment>
+                <event-block sid="472197820041229">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="932909794374352" type="game_save_variables">
+                            <param id="0" name="Instance variable">time_to_example</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment></comment>
+                        <event-block sid="566517309358354">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="631514234725890" type="sf76_white">
+                                    <param id="0" name="Instance variable">class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;result&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="430422252181114" type="function">
+                                    <param id="0" name="Name">&quot;set_result_text&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Время закончилось. Вы проиграли&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="246471033734002" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="731892850430793" type="game_save_variables">
+                                    <param id="0" name="Instance variable">game_save_state</param>
+                                    <param id="1" name="Value">&quot;fail&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <comment>Состояние fail - проиграл. Выход в меню</comment>
+        <comment></comment>
+        <event-block sid="148309030827716">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="637577142071553" type="game_save_variables">
+                    <param id="0" name="Instance variable">game_save_state</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;fail&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="537332653706985" type="function">
+                    <param id="0" name="Name">&quot;show_result_window&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="413225721727096" type="function">
+                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;on&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="905977150659037" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="403452181564974" type="System">
+                    <param id="0" name="Layout">end_game</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <comment>Состояние win - выйграл</comment>
+        <event-block sid="174975885404513">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="560494540128641" type="game_save_variables">
+                    <param id="0" name="Instance variable">game_save_state</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;win&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment></comment>
+                <event-block sid="750959255068409">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Call function" sid="630833903980695" type="function">
+                            <param id="0" name="Name">&quot;show_result_window&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="783212473727516" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Примеры закончились, игрок победил</comment>
+                <event-block sid="847394291753289">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="432535167199581" type="game_save_variables">
+                            <param id="0" name="Instance variable">count_of_examples</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="837334385618928" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="729861974176737" type="function">
+                            <param id="0" name="Name">&quot;set_result_text&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Ты победил! Игра продолжается&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="317514464052271" type="function">
+                            <param id="0" name="Name">&quot;show_result_window&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="766459459132650" type="function">
+                            <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;on&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="255311697104605" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="903687057913603" type="System">
+                            <param id="0" name="Layout">levels</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Прмеры не закончились, меняем состояние игры на next_example</comment>
+                <event-block sid="819341403276101">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="747935220653342" type="game_save_variables">
+                            <param id="0" name="Instance variable">count_of_examples</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="622331119488645" type="System" />
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="0" name="Call function" sid="417107724432885" type="function">
+                            <param id="0" name="Name">&quot;set_result_text&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Верно! Следующий пример...&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="820769213761908" type="function">
+                            <param id="0" name="Name">&quot;show_result_window&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="713725095203076" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="772722738107088" type="game_save_variables">
+                            <param id="0" name="Instance variable">game_save_state</param>
+                            <param id="1" name="Value">&quot;next_example&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <comment>Функции</comment>
+        <comment></comment>
+        <comment>Функция устаналивает значение из параметра 0 в text спрайта sf76</comment>
+        <event-block sid="594954950894885">
+            <conditions>
+                <condition id="0" name="On function" sid="786760659522440" type="function">
+                    <param id="0" name="Name">&quot;set_result_text&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="275115069050504">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="874994608507880" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;result&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="852085679547935" type="sf76_white">
+                            <param id="0" name="Text">function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <comment>Функция открывает окно с результатом</comment>
+        <event-block sid="476986561943951">
+            <conditions>
+                <condition id="0" name="On function" sid="501716766407443" type="function">
+                    <param id="0" name="Name">&quot;show_result_window&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="144611073718079" type="System">
+                    <param id="0" name="Layer">&quot;result&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="749755100497856" type="System">
+                    <param id="0" name="Layer">&quot;win&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <comment>Функция закрывает окно с результатом</comment>
+        <event-block sid="354664601833254">
+            <conditions>
+                <condition id="0" name="On function" sid="182842569915549" type="function">
+                    <param id="0" name="Name">&quot;close_result_window&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="638256390870780" type="System">
+                    <param id="0" name="Layer">&quot;result&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="344868896973050" type="System">
+                    <param id="0" name="Layer">&quot;win&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <comment>Функция возвращает текущий уровень сложности</comment>
+        <event-block sid="966643514292732">
+            <conditions>
+                <condition id="0" name="On function" sid="765092873699784" type="function">
+                    <param id="0" name="Name">&quot;get_the_current_difficulty_level&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>Возвращает 0, если текущий пример 0 или 1 </comment>
+                <event-block any="1" sid="842583678835089">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="438828711074927" type="game_save_variables">
+                            <param id="0" name="Instance variable">current_example</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="447937169166303" type="game_save_variables">
+                            <param id="0" name="Instance variable">current_example</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="774520016563228" type="function">
+                            <param id="0" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Возвращает 1, если текущий пример 2, 3, 4 </comment>
+                <event-block any="1" sid="235915568350279">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="201026783355203" type="game_save_variables">
+                            <param id="0" name="Instance variable">current_example</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="978826986874429" type="game_save_variables">
+                            <param id="0" name="Instance variable">current_example</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="743326974867986" type="game_save_variables">
+                            <param id="0" name="Instance variable">current_example</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="799056859949956" type="function">
+                            <param id="0" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Возвращает 2, если текущий пример 5, 6, 7, 8, 9 </comment>
+                <event-block any="1" sid="300391002735947">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="199715871824126" type="game_save_variables">
+                            <param id="0" name="Instance variable">current_example</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="897129085927147" type="function">
+                            <param id="0" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <comment>Функция устанавливает значения op1, op2 в текст спрайтов sf76</comment>
+        <event-block sid="782696798399030">
+            <conditions>
+                <condition id="0" name="On function" sid="319594739621436" type="function">
+                    <param id="0" name="Name">&quot;set_operands_to_text&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="264748126787585">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="206147729359034" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;operand&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="336698925917646" type="sf76_white">
+                            <param id="0" name="Instance variable">number</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="275366517678708" type="sf76_white">
+                            <param id="0" name="Instance variable">value</param>
+                            <param id="1" name="Value">game_save_variables.op1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="594996065870185" type="sf76_white">
+                            <param id="0" name="Text">sf76_white.value</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="713231456513923">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="639781885050028" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;operand&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="967075635754104" type="sf76_white">
+                            <param id="0" name="Instance variable">number</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="738489987701723" type="sf76_white">
+                            <param id="0" name="Instance variable">value</param>
+                            <param id="1" name="Value">game_save_variables.op2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="998562376204887" type="sf76_white">
+                            <param id="0" name="Text">sf76_white.value</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <comment>Функция считает правильный ответ и определяет его на игровом поле</comment>
+        <event-block sid="840981906726036">
+            <conditions>
+                <condition id="0" name="On function" sid="309684948007900" type="function">
+                    <param id="0" name="Name">&quot;calculate_the_correct_answer&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment></comment>
+                <comment>Проверяем знак операции и вычисляем правильный результат. Результат записываем в переменную corrrect answer</comment>
+                <comment></comment>
+                <event-block sid="238416156812954">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="421007129582971" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;character&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="292019836112091" type="sf76_white">
+                            <param id="0" name="Instance variable">number</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="0" name="Compare text" sid="138501462538071" type="sf76_white">
+                            <param id="0" name="Text to compare">&quot;+&quot;</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="325450729025616" type="game_save_variables">
+                            <param id="0" name="Instance variable">correct_answer</param>
+                            <param id="1" name="Value">int(game_save_variables.op1 + game_save_variables.op2)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment></comment>
+                <event-block sid="933073377342772">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="265942634344800" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;character&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="489582027248489" type="sf76_white">
+                            <param id="0" name="Instance variable">number</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="0" name="Compare text" sid="549683768624234" type="sf76_white">
+                            <param id="0" name="Text to compare">&quot;-&quot;</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="803645360172539" type="game_save_variables">
+                            <param id="0" name="Instance variable">correct_answer</param>
+                            <param id="1" name="Value">int(game_save_variables.op1 - game_save_variables.op2)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment></comment>
+                <event-block sid="253466290503705">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="617695621855206" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;character&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="381626106695003" type="sf76_white">
+                            <param id="0" name="Instance variable">number</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="0" name="Compare text" sid="921995575232545" type="sf76_white">
+                            <param id="0" name="Text to compare">&quot;*&quot;</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="519721926831478" type="game_save_variables">
+                            <param id="0" name="Instance variable">correct_answer</param>
+                            <param id="1" name="Value">int(game_save_variables.op1 * game_save_variables.op2)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>и удаляем из массива numbers правильный ответ</comment>
+                <event-block sid="911191434052219">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="678974625555603" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Delete" sid="522393882581206" type="ary_of_numbers">
+                            <param id="0" name="Index">game_save_variables.correct_answer</param>
+                            <param id="1" name="Axis">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment></comment>
+                <comment>Определяем позицию правильного ответа</comment>
+                <event-block sid="594114077035037">
+                    <conditions />
+                    <actions>
+                        <action id="-10" name="Set value" sid="257865917510283" type="game_save_variables">
+                            <param id="0" name="Instance variable">correct_answer_position</param>
+                            <param id="1" name="Value">choose(1,2,3,4)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Заполняем правильный вариант</comment>
+                <event-block sid="585239819207594">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="575784525368108" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ans&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="514404238413746" type="sf76_white">
+                            <param id="0" name="Instance variable">number</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">game_save_variables.correct_answer_position</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="801060259143689" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="432062548411507" type="sf76_white">
+                            <param id="0" name="Text">game_save_variables.correct_answer</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="983849964887943" type="sf76_white">
+                            <param id="0" name="Instance variable">value</param>
+                            <param id="1" name="Value">game_save_variables.correct_answer</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <comment>Заполняем неправильные варианты ответов</comment>
+        <comment>В качестве первого параметра принимает набольший из операндов, в качестве второго параметра принимает верный ответ + наименьший из параметров</comment>
+        <comment></comment>
+        <event-block sid="901944065612715">
+            <conditions>
+                <condition id="0" name="On function" sid="484979243941351" type="function">
+                    <param id="0" name="Name">&quot;set_wrong_answers&quot;</param>
+                </condition>
+                <condition id="-10" name="For" sid="716812782462267" type="System">
+                    <param id="0" name="Name">&quot;i&quot;</param>
+                    <param id="1" name="Start index">1</param>
+                    <param id="2" name="End index">4</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="860930159168820">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="670952270595457" type="sf76_white">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ans&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="917513971936549" type="sf76_white">
+                            <param id="0" name="Instance variable">number</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">loopindex(&quot;i&quot;)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="524205051164912" type="sf76_white">
+                            <param id="0" name="Instance variable">number</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">game_save_variables.correct_answer_position</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="809755492628048" type="game_save_variables">
+                            <param id="0" name="Instance variable">current_index</param>
+                            <param id="1" name="Value">floor(random(game_save_variables.correct_answer - 5, game_save_variables.correct_answer + 5)) </param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment></comment>
+                        <event-block sid="307855438993497">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="426455371267355" type="game_save_variables">
+                                    <param id="0" name="Instance variable">current_index</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="697411262942653" type="game_save_variables">
+                                    <param id="0" name="Instance variable">current_index</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">99</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="887167816803267" type="sf76_white">
+                                    <param id="0" name="Instance variable">value</param>
+                                    <param id="1" name="Value">ary_of_numbers.At(game_save_variables.current_index)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="431370929474703" type="System">
+                                    <param id="0" name="Variable">testing</param>
+                                    <param id="1" name="Value">sf76_white.value</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="411263330658538">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="550167474864421" type="game_save_variables">
+                                    <param id="0" name="Instance variable">current_index</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="850768568230901" type="sf76_white">
+                                    <param id="0" name="Instance variable">value</param>
+                                    <param id="1" name="Value">ary_of_numbers.At(1)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="509985920920787" type="System">
+                                    <param id="0" name="Variable">testing</param>
+                                    <param id="1" name="Value">sf76_white.value</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="330243124285210">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="233131500732424" type="game_save_variables">
+                                    <param id="0" name="Instance variable">current_index</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">99</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="606811721513218" type="sf76_white">
+                                    <param id="0" name="Instance variable">value</param>
+                                    <param id="1" name="Value">ary_of_numbers.Back</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="291727120119019" type="System">
+                                    <param id="0" name="Variable">testing</param>
+                                    <param id="1" name="Value">sf76_white.value</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <comment></comment>
+                        <event-block sid="498707563310737">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Set text" sid="342546147763669" type="sf76_white">
+                                    <param id="0" name="Text">sf76_white.value</param>
+                                </action>
+                                <action id="9" name="Delete" sid="847839901926917" type="ary_of_numbers">
+                                    <param id="0" name="Index">ary_of_numbers.IndexOf(sf76_white.value)</param>
+                                    <param id="1" name="Axis">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <comment>Метод очищает массив, а затем заполняет кго новыми данными</comment>
+        <event-block sid="542722240380458">
+            <conditions>
+                <condition id="0" name="On function" sid="106094609637560" type="function">
+                    <param id="0" name="Name">&quot;set_array_of_wrong_answers&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment></comment>
+                <comment>Очищаем массив с данными для неправльных ответов</comment>
+                <event-block sid="113733761551935">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Destroy" sid="968334487188119" type="ary_of_numbers" />
+                        <action id="-3" name="Create object" sid="912060266563554" type="System">
+                            <param id="0" name="Object to create">ary_of_numbers</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment></comment>
+                <comment>Заполняем массив данными для неправильных ответов</comment>
+                <event-block sid="679484881897068">
+                    <conditions>
+                        <condition id="-10" name="For" sid="787328645360622" type="System">
+                            <param id="0" name="Name">&quot;numbers&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">99</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set at X" sid="683341621415682" type="ary_of_numbers">
+                            <param id="0" name="X">loopindex(&quot;numbers&quot;)</param>
+                            <param id="1" name="Value">loopindex(&quot;numbers&quot;)</param>
+                        </action>
+                        <action disabled="1" id="10" name="Insert" sid="296982347164495" type="ary_of_numbers">
+                            <param id="0" name="Value">loopindex(&quot;numbers&quot;)</param>
+                            <param id="1" name="Index">loopindex(&quot;numbers&quot;)</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

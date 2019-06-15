@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>coin_save</name>
+    <events>
+        <include>transitition</include>
+        <include>buttons</include>
+        <comment></comment>
+        <event-block sid="467830955746422">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="984757168393973" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="948802903090713" type="function">
+                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;off&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="646638369043903">
+            <conditions>
+                <condition id="3" name="On touched object" sid="246763535448305" type="Touch">
+                    <param id="0" name="Object">buttons2</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="698006252677846" type="buttons2">
+                    <param id="0" name="Instance variable">class</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;coin_save&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="209837974288407" type="System">
+                    <param id="0" name="Variable">coins_count</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="218702477295671" type="buttons2">
+                    <param id="0" name="Frame number">buttons2.AnimationFrame+1</param>
+                </action>
+                <action id="-16" name="Wait" sid="835552373948466" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="5" name="Set frame" sid="428431456420101" type="buttons2">
+                    <param id="0" name="Frame number">buttons2.AnimationFrame-1</param>
+                </action>
+                <action id="-16" name="Wait" sid="747480971926366" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-9" name="Set value" sid="519884923435103" type="System">
+                    <param id="0" name="Variable">coins_count</param>
+                    <param id="1" name="Value">coins_count - 100</param>
+                </action>
+                <action id="0" name="Call function" sid="985251412468909" type="function">
+                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;on&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="302266747306654" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="964284901048644" type="System">
+                    <param id="0" name="Layout">levels</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="899920854352132">
+            <conditions>
+                <condition id="3" name="On touched object" sid="123875648654461" type="Touch">
+                    <param id="0" name="Object">buttons2</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="866301493883930" type="buttons2">
+                    <param id="0" name="Instance variable">class</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;earn_coins&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="138791828687369" type="buttons2">
+                    <param id="0" name="Frame number">buttons2.AnimationFrame+1</param>
+                </action>
+                <action id="-16" name="Wait" sid="642879381057246" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="5" name="Set frame" sid="626433079782135" type="buttons2">
+                    <param id="0" name="Frame number">buttons2.AnimationFrame-1</param>
+                </action>
+                <action id="-16" name="Wait" sid="353330776030081" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-9" name="Set value" sid="137279712871181" type="System">
+                    <param id="0" name="Variable">coins_count</param>
+                    <param id="1" name="Value">coins_count + 50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="100602210171957">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="378194261953168" type="sf76_white">
+                    <param id="0" name="Instance variable">class</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;coins&quot;</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="634463538909720" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="725499270142661" type="sf76_white">
+                    <param id="0" name="Text">coins_count</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="727019244257589">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="276642030929929" type="System">
+                    <param id="0" name="Variable">coins_count</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="610456525310565" type="System" />
+                <condition id="-7" name="Compare instance variable" sid="887086371345955" type="buttons2">
+                    <param id="0" name="Instance variable">class</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;coin_save&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="766986108563045" type="buttons2">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="881814951050682">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="119981662999724" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="607752931986438">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="227772395223551" type="buttons2">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;coin_save&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="191598960450764" type="System">
+                            <param id="0" name="First value">coins_count</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="911235037563187" type="buttons2">
+                            <param id="0" name="Opacity">60</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

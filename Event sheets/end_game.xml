@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>end_game</name>
+    <events>
+        <include>transitition</include>
+        <comment></comment>
+        <event-block sid="375966220330617">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="103842945069714" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="305282124223569" type="function">
+                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;off&quot;</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="384396207847297" type="System">
+                    <param id="0" name="Layer">&quot;transition&quot;</param>
+                    <param id="1" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="118318521587979">
+            <conditions>
+                <condition id="14" name="On tap" sid="609746026396980" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="794631092919174" type="System">
+                    <param id="0" name="Variable">heart</param>
+                    <param id="1" name="Value">9</param>
+                </action>
+                <action id="0" name="Call function" sid="169529514811970" type="function">
+                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;on&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="205408448572950" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="664694810482560" type="System">
+                    <param id="0" name="Layout">menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="714504351131844">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="850392764138841" type="System" />
+                <condition id="-7" name="Compare instance variable" sid="194401543402580" type="sf76_white">
+                    <param id="0" name="Instance variable">class</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;distance&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="772137340154783" type="sf76_white">
+                    <param id="0" name="Text">&quot;Total distance: &quot; &amp; total_distance &amp; &quot;m&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
