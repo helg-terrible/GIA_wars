@@ -2,5 +2,152 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>tasks_for_opponent</name>
-    <events />
+    <events>
+        <variable constant="0" name="point" sid="620105787615701" static="0" type="number">0</variable>
+        <variable constant="0" name="continue" sid="597506053284768" static="0" type="number">1</variable>
+        <comment>Прибавить</comment>
+        <event-block sid="910778518561256">
+            <conditions>
+                <condition id="17" name="On tap object" sid="362663006466895" type="Touch">
+                    <param id="0" name="Object">Sprite6</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="112890290145049" type="Sprite6">
+                    <param id="0" name="Instance variable">type</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="463104837072738" type="Sprite6">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="539570128546652" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="5" name="Set frame" sid="372092481338294" type="Sprite6">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="791537280118092">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="103940486754592" type="text_point">
+                            <param id="0" name="Instance variable">value</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="263304757435210" type="text_point">
+                            <param id="0" name="Instance variable">Number</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Sprite6.Number</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="516611282302857" type="System">
+                            <param id="0" name="Variable">point</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="993602945373966" type="text_point">
+                            <param id="0" name="Instance variable">value</param>
+                            <param id="1" name="Value">text_point.value +1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="994951050193397" type="text_point">
+                            <param id="0" name="Text">text_point.value</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="176515283752030" type="System">
+                            <param id="0" name="Variable">point</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Вычесть</comment>
+        <event-block sid="885081890634783">
+            <conditions>
+                <condition id="17" name="On tap object" sid="468735652101911" type="Touch">
+                    <param id="0" name="Object">Sprite6</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="765189030727270" type="Sprite6">
+                    <param id="0" name="Instance variable">type</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="523885212314441" type="Sprite6">
+                    <param id="0" name="Frame number">3</param>
+                </action>
+                <action id="-16" name="Wait" sid="733145949560394" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="5" name="Set frame" sid="753140295146868" type="Sprite6">
+                    <param id="0" name="Frame number">2</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="629002953653188">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="676271740627758" type="text_point">
+                            <param id="0" name="Instance variable">value</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="284891195054801" type="text_point">
+                            <param id="0" name="Instance variable">Number</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Sprite6.Number</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="554897977896391" type="System">
+                            <param id="0" name="Variable">continue</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="743119648404055" type="text_point">
+                            <param id="0" name="Instance variable">value</param>
+                            <param id="1" name="Value">text_point.value -1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="384784064977282" type="text_point">
+                            <param id="0" name="Text">text_point.value</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="956941475408434" type="System">
+                            <param id="0" name="Variable">continue</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="526068880111298" type="System">
+                            <param id="0" name="Variable">point</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="375290950687339">
+            <conditions>
+                <condition id="17" name="On tap object" sid="682281233055036" type="Touch">
+                    <param id="0" name="Object">start</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="703109910464720" type="start">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="163619593147859" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="5" name="Set frame" sid="863971279802436" type="start">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="602628325209615" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="708309674819442" type="System">
+                    <param id="0" name="Layout">game</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
 </c2eventsheet>

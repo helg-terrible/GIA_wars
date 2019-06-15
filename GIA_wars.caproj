@@ -12,13 +12,16 @@
     <used-plugins>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors />
     <used-effects>
         <effect author="Scirra" id="brightness">Brightness</effect>
+        <effect author="Scirra" id="warp">Warp</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -53,19 +56,162 @@
                 <instance-variable comment="кнопка перехода на уровень сражения" name="class" sid="204442570693994" type="string" />
             </instance-variables>
             <animation-folder>
-                <animation framecount="12" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="972423340091530" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\pause 2.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\pause black.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\start black.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\start white.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\YandexDisk\c2\buttons\003.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Ruslan\YandexDisk\c2\buttons\004.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\previous black.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\previous white.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\menu black.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\menu white.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\next black.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\YandexDisk-lexusrus1\c2\art\buttons\next white.png" />
+                <animation framecount="16" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="972423340091530" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\игра1.png">
+                        <collision-poly>
+                            <point x="0.00445104" y="0.0234375" />
+                            <point x="0.5" y="0" />
+                            <point x="0.995549" y="0.0234375" />
+                            <point x="0.997033" y="0.984375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00445104" y="0.976563" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\игра2.png">
+                        <collision-poly>
+                            <point x="0.00296736" y="0.015625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.997033" y="0.015625" />
+                            <point x="0.998516" y="0.992188" />
+                            <point x="0.00296736" y="0.984375" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\дуэль1.png">
+                        <collision-poly>
+                            <point x="0.00445104" y="0.0234375" />
+                            <point x="0.5" y="0" />
+                            <point x="0.995549" y="0.0234375" />
+                            <point x="0.997033" y="0.984375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00445104" y="0.976563" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\дуэль2.png">
+                        <collision-poly>
+                            <point x="0.00296736" y="0.015625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.997033" y="0.015625" />
+                            <point x="0.998516" y="0.992188" />
+                            <point x="0.00296736" y="0.984375" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\тренировка1.png">
+                        <collision-poly>
+                            <point x="0.00445104" y="0.0234375" />
+                            <point x="0.5" y="0" />
+                            <point x="0.995549" y="0.0234375" />
+                            <point x="0.997033" y="0.984375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00445104" y="0.976563" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\тренировка2.png">
+                        <collision-poly>
+                            <point x="0.00296736" y="0.015625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.997033" y="0.015625" />
+                            <point x="0.998516" y="0.992188" />
+                            <point x="0.00296736" y="0.984375" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\статистика1.png">
+                        <collision-poly>
+                            <point x="0.00445104" y="0.0234375" />
+                            <point x="0.5" y="0" />
+                            <point x="0.995549" y="0.0234375" />
+                            <point x="0.997033" y="0.984375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00445104" y="0.976563" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.00445104" y="0.0234375" />
+                            <point x="0.5" y="0" />
+                            <point x="0.995549" y="0.0234375" />
+                            <point x="0.997033" y="0.984375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00445104" y="0.976563" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\профиль1.png">
+                        <collision-poly>
+                            <point x="0.00445104" y="0.0234375" />
+                            <point x="0.5" y="0" />
+                            <point x="0.995549" y="0.0234375" />
+                            <point x="0.997033" y="0.984375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00445104" y="0.976563" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\профиль2.png">
+                        <collision-poly>
+                            <point x="0.00296736" y="0.015625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.997033" y="0.015625" />
+                            <point x="0.998516" y="0.992188" />
+                            <point x="0.00296736" y="0.984375" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\упражнения1.png">
+                        <collision-poly>
+                            <point x="0.00445104" y="0.0234375" />
+                            <point x="0.5" y="0" />
+                            <point x="0.995549" y="0.0234375" />
+                            <point x="0.997033" y="0.984375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00445104" y="0.976563" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\упражнения2.png">
+                        <collision-poly>
+                            <point x="0.00296736" y="0.015625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.997033" y="0.015625" />
+                            <point x="0.998516" y="0.992188" />
+                            <point x="0.00296736" y="0.984375" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\рейтинг1.png">
+                        <collision-poly>
+                            <point x="0.00445104" y="0.0234375" />
+                            <point x="0.5" y="0" />
+                            <point x="0.995549" y="0.0234375" />
+                            <point x="0.997033" y="0.984375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00445104" y="0.976563" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\рейтинг2.png">
+                        <collision-poly>
+                            <point x="0.00445104" y="0.0234375" />
+                            <point x="0.5" y="0" />
+                            <point x="0.995549" y="0.0234375" />
+                            <point x="0.997033" y="0.984375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00445104" y="0.976563" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ\gear.png">
+                        <collision-poly>
+                            <point x="0.00445104" y="0.0234375" />
+                            <point x="0.5" y="0" />
+                            <point x="0.995549" y="0.0234375" />
+                            <point x="0.997033" y="0.984375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00445104" y="0.976563" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.00445104" y="0.0234375" />
+                            <point x="0.5" y="0" />
+                            <point x="0.995549" y="0.0234375" />
+                            <point x="0.997033" y="0.984375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00445104" y="0.976563" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -151,6 +297,10 @@
         </object-type>
         <object-type name="Sprite6" sid="973309993104126">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Number" sid="546276743123156" type="number" />
+                <instance-variable name="type" sid="520451368546109" type="number" />
+            </instance-variables>
             <animation-folder>
                 <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="400034050872541" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\Плюс1.png">
@@ -213,7 +363,7 @@
             </effects>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="102497322054157" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Downloads\обои 2.jpg" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\задник.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -227,6 +377,128 @@
         </object-type>
         <object-type name="Text3" sid="429921901507477">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="text_point" sid="564508706912292">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="Number" sid="124513431735106" type="number" />
+                <instance-variable name="value" sid="611358444353234" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="Mouse" sid="953180200743757">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="start" sid="929924598324243">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="775005961059001" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\старт3.png">
+                        <collision-poly>
+                            <point x="0.015625" y="0.046875" />
+                            <point x="0.5" y="0.0234375" />
+                            <point x="0.983073" y="0.0507813" />
+                            <point x="0.979167" y="0.9375" />
+                            <point x="0.0195313" y="0.941406" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\старт4.png">
+                        <collision-poly>
+                            <point x="0.015625" y="0.046875" />
+                            <point x="0.5" y="0.0234375" />
+                            <point x="0.983073" y="0.0507813" />
+                            <point x="0.979167" y="0.9375" />
+                            <point x="0.0195313" y="0.941406" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="825455179859601">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\zrf\Documents\c2\задник.png" />
+        </object-type>
+        <object-type name="Sprite9" sid="982046910091002">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="401306273429899" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\Профиль.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite10" sid="164692295205415">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="617581267851596" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\Радар.png">
+                        <collision-poly>
+                            <point x="0.00537634" y="0.00687285" />
+                            <point x="0.99328" y="0.00859107" />
+                            <point x="0.987903" y="0.984536" />
+                            <point x="0.0120968" y="0.984536" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="vs1" sid="993664179928733">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="522263057548430" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\vs\vs2.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="vs_icon" sid="184639750468459">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="up" sid="852523918723057" type="number" />
+                <instance-variable name="down" sid="636937134523481" type="number" />
+            </instance-variables>
+            <effects>
+                <effect-type name="Warp">
+                    <effect id="warp" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="678059773551976" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\vs icon.png">
+                        <collision-poly>
+                            <point x="0.219008" y="0.219008" />
+                            <point x="0.5" y="0.165289" />
+                            <point x="0.706612" y="0.293388" />
+                            <point x="0.607438" y="0.5" />
+                            <point x="0.72314" y="0.72314" />
+                            <point x="0.5" y="0.859504" />
+                            <point x="0.359504" y="0.640496" />
+                            <point x="0.334711" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="vs2" sid="316454557409556">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="222120412516836" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\vs\vs3.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite11" sid="457831514195939">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="659372736955602" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\vs\vs4.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite12" sid="780978287963894">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="178872504908946" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\vs\slon5.jpg" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
@@ -252,6 +524,7 @@
             </properties>
         </global-instance>
         <global-instance type="Function" uid="2" />
+        <global-instance type="Mouse" uid="37" />
     </global-instances>
     <sounds-folder />
     <music-folder />

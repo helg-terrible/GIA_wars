@@ -3,15 +3,54 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>load_game_1</name>
     <events>
-        <event-block sid="570806239711430">
+        <variable constant="0" name="opacity" sid="971964937872261" static="0" type="number">0</variable>
+        <event-block sid="523381842124546">
             <conditions>
-                <condition id="-2" name="On start of layout" sid="435848574319147" type="System" />
+                <condition id="-7" name="Compare instance variable" sid="233804072924683" type="vs_icon">
+                    <param id="0" name="Instance variable">up</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">vs_icon.Width</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="-16" name="Wait" sid="652767964351447" type="System">
-                    <param id="0" name="Seconds">2.0</param>
+                <action id="-7" name="Set size" sid="909624329508833" type="vs_icon">
+                    <param id="0" name="Width">vs_icon.Width + 1</param>
+                    <param id="1" name="Height">vs_icon.Height + 1</param>
                 </action>
-                <action id="-2" name="Go to layout" sid="887174670943626" type="System">
+            </actions>
+        </event-block>
+        <event-block sid="755286559246038">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="852556175605014" type="System">
+                    <param id="0" name="Interval (seconds)">0.05</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="343952162938443" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="792806343822000" type="vs2">
+                    <param id="0" name="Opacity">vs2.Opacity +5</param>
+                </action>
+                <action id="-9" name="Set value" sid="347942344175748" type="System">
+                    <param id="0" name="Variable">opacity</param>
+                    <param id="1" name="Value">vs2.Opacity</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="967972756517940">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="633857305077938" type="System">
+                    <param id="0" name="Variable">opacity</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="415456123116039" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="685600712805611" type="System">
                     <param id="0" name="Layout">tasks_for_opponent</param>
                 </action>
             </actions>
