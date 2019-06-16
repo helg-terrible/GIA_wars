@@ -763,6 +763,33 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Sprite14" sid="990876092318582">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="535272338484256" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.505263" original-source="C:\Users\slavu\Google Диск\Прорыв\Дизайн\перестрелка\answer_box.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="answer_box_1" sid="989817118465206">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="315405786937937" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.505263" original-source="C:\Users\slavu\Google Диск\Прорыв\Дизайн\перестрелка\answer_box.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="answer_box2" sid="169964261637763">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="class" sid="279741420685807" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="239622230468352" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.505263" original-source="C:\Users\slavu\Google Диск\Прорыв\Дизайн\перестрелка\answer_box.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>

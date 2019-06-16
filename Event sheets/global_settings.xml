@@ -4,7 +4,7 @@
     <name>global_settings</name>
     <events>
         <variable comment="Состояние игры - меню" constant="0" name="game_state" sid="908941246279164" static="0" type="text">menu</variable>
-        <variable comment="Таймер для решения задачи" constant="1" name="TIMER_CONST" sid="215774664320720" static="0" type="number">31</variable>
+        <variable comment="Таймер для решения задачи" constant="1" name="TIMER_CONST" sid="215774664320720" static="0" type="number">15</variable>
         <variable comment="Таймер для решения задачи" constant="0" name="timer" sid="509423725647931" static="0" type="number">0</variable>
         <comment></comment>
         <variable comment="Состояние pvp сражения" constant="0" name="battle_state" sid="758264208138391" static="0" type="text">wait</variable>

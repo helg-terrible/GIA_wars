@@ -38,6 +38,7 @@
                         <action id="-16" name="Set opacity" sid="610646809890217" type="task_1_1">
                             <param id="0" name="Opacity">100</param>
                         </action>
+                        <action id="-24" name="Move to top" sid="164029388660064" type="task_1_1" />
                         <action id="-9" name="Set value" sid="185648212063951" type="System">
                             <param id="0" name="Variable">timer</param>
                             <param id="1" name="Value">TIMER_CONST</param>
@@ -205,13 +206,14 @@
                         <comment></comment>
                     </sub-events>
                 </event-block>
-                <comment>Если текущй игрок завершил ход, а оппонент еще нет и время еще не кончилось, тогда показываем задачу оппонента</comment>
+                <comment>Если текущй игрок успешно решл задачу, а оппонент еще нет и время еще не кончилось, тогда показываем задачу оппонента</comment>
                 <event-block sid="749927957064998">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="385695494082332" type="game_settings">
-                            <param id="0" name="Instance variable">current_player_done</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="1" name="Compare at XY" sid="385695494082332" type="Array">
+                            <param id="0" name="X">game_settings.current_task - 1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">1</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="220235008385972" type="game_settings">
                             <param id="0" name="Instance variable">opponent_player_done</param>
@@ -238,9 +240,17 @@
                                 <action id="-16" name="Set opacity" sid="717210376406883" type="task_1_1">
                                     <param id="0" name="Opacity">0</param>
                                 </action>
+                                <action id="0" name="Call function" sid="861598563163416" type="Function">
+                                    <param id="0" name="Name">&quot;set_settings_for_opponent&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="594127700262883" type="Function">
+                                    <param id="0" name="Name">&quot;set_answers_for_task_12&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="455036994247603">
+                                <event-block disabled="1" sid="455036994247603">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="542173925936936" type="option_1">
                                             <param id="0" name="Instance variable">class</param>
@@ -258,7 +268,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block bookmark="1" sid="269624564940837">
+                                <event-block bookmark="1" disabled="1" sid="269624564940837">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="865495323880536" type="option_1">
                                             <param id="0" name="Instance variable">class</param>
@@ -276,7 +286,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="484800380388375">
+                                <event-block disabled="1" sid="484800380388375">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="553333682164152" type="option_1">
                                             <param id="0" name="Instance variable">class</param>
@@ -294,7 +304,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="464492798865646">
+                                <event-block disabled="1" sid="464492798865646">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="631805219944169" type="option_1">
                                             <param id="0" name="Instance variable">class</param>
@@ -327,10 +337,11 @@
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="164722753476729" type="game_settings">
-                            <param id="0" name="Instance variable">current_player_done</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="1" name="Compare at XY" sid="890513540392890" type="Array">
+                            <param id="0" name="X">game_settings.current_task - 1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">1</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="233750822079296" type="game_settings">
                             <param id="0" name="Instance variable">opponent_player_done</param>
@@ -448,6 +459,9 @@
                         <condition id="-4" name="Trigger once while true" sid="264379656994061" type="System" />
                     </conditions>
                     <actions>
+                        <action id="5" name="Set frame" sid="980210972740367" type="battle_background">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
                         <action id="-16" name="Set opacity" sid="459509989288734" type="task_1_1">
                             <param id="0" name="Opacity">0</param>
                         </action>
@@ -457,81 +471,15 @@
                         <action id="-16" name="Set opacity" sid="559284250853122" type="task_2_1">
                             <param id="0" name="Opacity">100</param>
                         </action>
+                        <action id="0" name="Call function" sid="517894782160390" type="Function">
+                            <param id="0" name="Name">&quot;set_settings_for_player&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="520448545315753" type="Function">
+                            <param id="0" name="Name">&quot;set_answers_for_task_21&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="411282850657355">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="367746067311976" type="option_1">
-                                    <param id="0" name="Instance variable">class</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;option1&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="978749653816034" type="option_1">
-                                    <param id="0" name="Text">1800</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="228752621350103" type="option_1">
-                                    <param id="0" name="Instance variable">correct_answer</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="218067379995703">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="355352471147353" type="option_1">
-                                    <param id="0" name="Instance variable">class</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;option2&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="757631892572252" type="option_1">
-                                    <param id="0" name="Text">2100</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="520117641655613" type="option_1">
-                                    <param id="0" name="Instance variable">correct_answer</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="450028189860887">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="757092918878323" type="option_1">
-                                    <param id="0" name="Instance variable">class</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;option3&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="157099986096282" type="option_1">
-                                    <param id="0" name="Text">2000</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="211554463458013" type="option_1">
-                                    <param id="0" name="Instance variable">correct_answer</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="437451371484333">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="782843421510602" type="option_1">
-                                    <param id="0" name="Instance variable">class</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;option4&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="439070078513571" type="option_1">
-                                    <param id="0" name="Text">2100</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="741067292234882" type="option_1">
-                                    <param id="0" name="Instance variable">correct_answer</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <comment>Сброс настроек</comment>
                 <event-block sid="741154346882095">
@@ -643,10 +591,11 @@
                 <comment>Если текущй игрок завершил ход, а оппонент еще нет и время еще не кончилось, тогда показываем задачу оппонента</comment>
                 <event-block sid="100812445712607">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="325287988385576" type="game_settings">
-                            <param id="0" name="Instance variable">current_player_done</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="1" name="Compare at XY" sid="134058868142891" type="Array">
+                            <param id="0" name="X">game_settings.current_task - 1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">1</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="125773346729157" type="game_settings">
                             <param id="0" name="Instance variable">opponent_player_done</param>
@@ -659,13 +608,7 @@
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="3" name="Set at XY" sid="579003240744138" type="Array">
-                            <param id="0" name="X">0</param>
-                            <param id="1" name="Y">0</param>
-                            <param id="2" name="Value">&quot;task_1&quot;</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
                         <comment>и убираем задачу текущего игрока</comment>
                         <event-block sid="752412924744556">
@@ -678,6 +621,10 @@
                                 </action>
                                 <action id="-16" name="Set opacity" sid="694203758738077" type="task_2_1">
                                     <param id="0" name="Opacity">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="960789572651846" type="Function">
+                                    <param id="0" name="Name">&quot;set_settings_for_opponent&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -889,6 +836,9 @@
                         <condition id="-4" name="Trigger once while true" sid="583253620690766" type="System" />
                     </conditions>
                     <actions>
+                        <action id="5" name="Set frame" sid="956448599793695" type="battle_background">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
                         <action id="-16" name="Set opacity" sid="282815003465441" type="task_2_1">
                             <param id="0" name="Opacity">0</param>
                         </action>
@@ -1326,6 +1276,9 @@
                         <condition id="-4" name="Trigger once while true" sid="181180744895542" type="System" />
                     </conditions>
                     <actions>
+                        <action id="5" name="Set frame" sid="710503614727192" type="battle_background">
+                            <param id="0" name="Frame number">3</param>
+                        </action>
                         <action id="-16" name="Set opacity" sid="256944126347033" type="task_3_1">
                             <param id="0" name="Opacity">0</param>
                         </action>
@@ -1763,6 +1716,9 @@
                         <condition id="-4" name="Trigger once while true" sid="232436312233169" type="System" />
                     </conditions>
                     <actions>
+                        <action id="5" name="Set frame" sid="947742274619170" type="battle_background">
+                            <param id="0" name="Frame number">4</param>
+                        </action>
                         <action id="-16" name="Set opacity" sid="348352333185355" type="task_4_1">
                             <param id="0" name="Opacity">0</param>
                         </action>
@@ -2188,10 +2144,409 @@
         <event-block sid="588951638769009">
             <conditions>
                 <condition id="0" name="On function" sid="536540730466161" type="Function">
-                    <param id="0" name="Name">&quot;set_sttings_for_current_player&quot;</param>
+                    <param id="0" name="Name">&quot;set_settings_for_current_player&quot;</param>
                 </condition>
             </conditions>
             <actions />
+            <sub-events>
+                <event-block sid="216567934684770">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="323187317221328" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="596872918874926" type="option_1">
+                            <param id="0" name="Y">608</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="303016761352377" type="option_1">
+                            <param id="0" name="X">720</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block bookmark="1" sid="457351089069299">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="750307989082334" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="430990945348466" type="option_1">
+                            <param id="0" name="Y">608</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="172019053873434" type="option_1">
+                            <param id="0" name="X">944</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="670422468222435">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="556182299599928" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option3&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="253613068869349" type="option_1">
+                            <param id="0" name="Y">608</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="472254689538011" type="option_1">
+                            <param id="0" name="X">1168</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="263628918930451">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="411806195528835" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option4&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="334800710021034" type="option_1">
+                            <param id="0" name="Y">608</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="440012377013805" type="option_1">
+                            <param id="0" name="X">1392</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>функция перемещает кнопки на позицию соперника</comment>
+        <event-block sid="745988092108523">
+            <conditions>
+                <condition id="0" name="On function" sid="405751543291852" type="Function">
+                    <param id="0" name="Name">&quot;set_settings_for_opponent&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-24" name="Move to top" sid="623486105126006" type="bg_answer_2" />
+                <action id="-24" name="Move to top" sid="747594240125777" type="answer_box2" />
+                <action id="-24" name="Move to top" sid="153833490364212" type="option_1" />
+            </actions>
+            <sub-events>
+                <event-block sid="887767128969005">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="374192125573914" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="609977231999750" type="option_1">
+                            <param id="0" name="Y">608</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="574346029668047" type="option_1">
+                            <param id="0" name="X">720</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block bookmark="1" sid="622934925294035">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="187508733503431" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="129296774938357" type="option_1">
+                            <param id="0" name="Y">608</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="275620164512894" type="option_1">
+                            <param id="0" name="X">944</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="929848975557893">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="220419957510923" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option3&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="855116269982042" type="option_1">
+                            <param id="0" name="Y">608</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="992091998878264" type="option_1">
+                            <param id="0" name="X">1168</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="489193481464488">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="985749201925754" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option4&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="653750208965360" type="option_1">
+                            <param id="0" name="Y">608</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="732509513315012" type="option_1">
+                            <param id="0" name="X">1392</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="164714040019296">
+            <conditions>
+                <condition id="0" name="On function" sid="762616982561465" type="Function">
+                    <param id="0" name="Name">&quot;set_settings_for_player&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-24" name="Move to top" sid="769188379419370" type="bg_answer_1" />
+                <action id="-24" name="Move to top" sid="458690077514706" type="answer_box_1" />
+                <action id="-24" name="Move to top" sid="928525028435670" type="option_1" />
+            </actions>
+            <sub-events>
+                <event-block sid="302211434765439">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="670279040164333" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="920566482031069" type="option_1">
+                            <param id="0" name="Y">720</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="435650515337263" type="option_1">
+                            <param id="0" name="X">624</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block bookmark="1" sid="961115307369895">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="360649030346334" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="474681404075951" type="option_1">
+                            <param id="0" name="Y">720</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="955205686886995" type="option_1">
+                            <param id="0" name="X">864</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="484724878512155">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="160408354737603" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option3&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="290759711202572" type="option_1">
+                            <param id="0" name="Y">720</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="844106573316959" type="option_1">
+                            <param id="0" name="X">1072</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="573427213224107">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="316711838996964" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option4&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="857623505272112" type="option_1">
+                            <param id="0" name="Y">720</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="235728329245674" type="option_1">
+                            <param id="0" name="X">1296</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="267606123285852">
+            <conditions>
+                <condition id="0" name="On function" sid="321324113448254" type="Function">
+                    <param id="0" name="Name">&quot;set_answers_for_task_12&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="367331696174755">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="845875659550379" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="199559624989324" type="option_1">
+                            <param id="0" name="Text">6000</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="841502170206941" type="option_1">
+                            <param id="0" name="Instance variable">correct_answer</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block bookmark="1" sid="863697823954761">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="987040144388682" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="116487250066488" type="option_1">
+                            <param id="0" name="Text">6840</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="742164087920001" type="option_1">
+                            <param id="0" name="Instance variable">correct_answer</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="647376620623771">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="107851292400002" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option3&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="824918716548810" type="option_1">
+                            <param id="0" name="Text">6050</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="216542880236638" type="option_1">
+                            <param id="0" name="Instance variable">correct_answer</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="458346315471174">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="638786414982106" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option4&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="128080488153147" type="option_1">
+                            <param id="0" name="Text">5452</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="353892224530086" type="option_1">
+                            <param id="0" name="Instance variable">correct_answer</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="171577180061173">
+            <conditions>
+                <condition id="0" name="On function" sid="982418393984248" type="Function">
+                    <param id="0" name="Name">&quot;set_answers_for_task_21&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="217464774140486">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="142558033527074" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="482978908491299" type="option_1">
+                            <param id="0" name="Text">1800</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="687690448966415" type="option_1">
+                            <param id="0" name="Instance variable">correct_answer</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="207457348334333">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="946110764901696" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="485964094699634" type="option_1">
+                            <param id="0" name="Text">2100</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="846113956682204" type="option_1">
+                            <param id="0" name="Instance variable">correct_answer</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="390216971262970">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="948693713010878" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option3&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="474872110189589" type="option_1">
+                            <param id="0" name="Text">2000</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="267972374712448" type="option_1">
+                            <param id="0" name="Instance variable">correct_answer</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="754105025656636">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="856048865054019" type="option_1">
+                            <param id="0" name="Instance variable">class</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;option4&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="796707479334289" type="option_1">
+                            <param id="0" name="Text">2100</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="641653556184251" type="option_1">
+                            <param id="0" name="Instance variable">correct_answer</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
