@@ -10,6 +10,7 @@
     <unique-id>mew09zne1nef</unique-id>
     <saved-with-version>26900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -619,6 +620,146 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="653517099839397" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="timer" sid="540551019443356">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="task_1_2" sid="971766545958886">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="task_1_1" sid="579817889501867">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable comment="Правильный ответ для задания №1" name="write_answer" sid="784098759220702" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="option_1" sid="753096289468119">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable comment="1 - верно, 0 - нет" name="correct_answer" sid="125555122465817" type="number" />
+                <instance-variable name="class" sid="158587467419596" type="string" />
+            </instance-variables>
+        </object-type>
+        <object-type name="task_2_2" sid="415519004148598">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable comment="Правильный ответ для задания №1" name="write_answer" sid="124575711094987" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="task_3_1" sid="937623260124663">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable comment="Правильный ответ для задания №1" name="write_answer" sid="844015664884720" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="task_3_2" sid="862964518632389">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable comment="Правильный ответ для задания №1" name="write_answer" sid="990989826860167" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="task_2_1" sid="304822296768279">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable comment="Правильный ответ для задания №1" name="write_answer" sid="219549394436523" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="task_4_2" sid="833606144352609">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable comment="Правильный ответ для задания №1" name="write_answer" sid="243095908299440" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="task_4_1" sid="489827039679740">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable comment="Правильный ответ для задания №1" name="write_answer" sid="996898581314290" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="task_5_1" sid="823921220355804">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable comment="Правильный ответ для задания №1" name="write_answer" sid="413148784149555" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="task_5_2" sid="972040776520895">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable comment="Правильный ответ для задания №1" name="write_answer" sid="401148994869725" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="game_settings" sid="145094991521330">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="текущая задача" name="current_task" sid="966838234865741" type="number" />
+                <instance-variable comment="Текущий игрок завершил ход? 1\0" name="current_player_done" sid="916068637236072" type="number" />
+                <instance-variable comment="Завершил ли оппонент" name="opponent_player_done" sid="717889138841314" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="923927318902207" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="Array" sid="509546157224832">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="battle_background" sid="674450013702056">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="244955147837341" speed="0">
+                    <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\slavu\Google Диск\Прорыв\Дизайн\перестрелка\perestrelka1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\slavu\Google Диск\Прорыв\Дизайн\перестрелка\perestrelka2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\slavu\Google Диск\Прорыв\Дизайн\перестрелка\perestrelka3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\slavu\Google Диск\Прорыв\Дизайн\перестрелка\perestrelka4.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\slavu\Google Диск\Прорыв\Дизайн\перестрелка\perestrelka5.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite13" sid="604008540807978">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="707141927428502" speed="5">
+                    <frame duration="1" hotspotX="0.505155" hotspotY="0.50505" original-source="C:\Users\slavu\Google Диск\Прорыв\Дизайн\перестрелка\answer_box.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="0.989691" y="0.989899" />
+                            <point x="0.0103093" y="0.989899" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_answer_1" sid="106975220192878">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="255702275319836" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.50079" original-source="C:\Users\slavu\Google Диск\Прорыв\Дизайн\перестрелка\blue.png">
+                        <collision-poly>
+                            <point x="0.00380228" y="0.00631912" />
+                            <point x="0.994297" y="0.00947867" />
+                            <point x="0.992395" y="0.987362" />
+                            <point x="0.00760456" y="0.987362" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_answer_2" sid="495879114942433">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="104717736215617" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.50079" original-source="C:\Users\slavu\Google Диск\Прорыв\Дизайн\перестрелка\red.png">
+                        <collision-poly>
+                            <point x="0.00380228" y="0.00631912" />
+                            <point x="0.994297" y="0.00947867" />
+                            <point x="0.992395" y="0.987362" />
+                            <point x="0.00760456" y="0.987362" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
