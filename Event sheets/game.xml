@@ -710,15 +710,16 @@
                         <condition id="3" name="On touched object" sid="399832194984174" type="Touch">
                             <param id="0" name="Object">option_1</param>
                         </condition>
+                        <condition id="1" name="Compare at XY" sid="465641819597779" type="Array">
+                            <param id="0" name="X">game_settings.current_task - 1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">1</param>
+                        </condition>
                         <condition id="-14" name="Compare variable" sid="492555830847865" type="System">
                             <param id="0" name="Variable">timer</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="555575370556806" type="game_settings">
-                            <param id="0" name="Instance variable">current_player_done</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="678784711072746" type="game_settings">
                             <param id="0" name="Instance variable">opponent_player_done</param>
@@ -1034,10 +1035,11 @@
                 <comment>Если текущй игрок завершил ход, а оппонент еще нет и время еще не кончилось, тогда показываем задачу оппонента</comment>
                 <event-block sid="834497316484753">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="624182544878536" type="game_settings">
-                            <param id="0" name="Instance variable">current_player_done</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="1" name="Compare at XY" sid="506136940041952" type="Array">
+                            <param id="0" name="X">game_settings.current_task - 1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">1</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="384592602659892" type="game_settings">
                             <param id="0" name="Instance variable">opponent_player_done</param>
@@ -1063,6 +1065,10 @@
                                 </action>
                                 <action id="-16" name="Set opacity" sid="447244519276007" type="task_3_2">
                                     <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="0" name="Call function" sid="789731881079924" type="Function">
+                                    <param id="0" name="Name">&quot;set_settings_for_opponent&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -2230,6 +2236,13 @@
                 <action id="-24" name="Move to top" sid="623486105126006" type="bg_answer_2" />
                 <action id="-24" name="Move to top" sid="747594240125777" type="answer_box2" />
                 <action id="-24" name="Move to top" sid="153833490364212" type="option_1" />
+                <action id="-24" name="Move to top" sid="495721745109287" type="timer" />
+                <action id="-2" name="Set Y" sid="653515477897460" type="timer">
+                    <param id="0" name="Y">608</param>
+                </action>
+                <action id="-1" name="Set X" sid="298017454851100" type="timer">
+                    <param id="0" name="X">640</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="887767128969005">
@@ -2312,6 +2325,13 @@
                 <action id="-24" name="Move to top" sid="769188379419370" type="bg_answer_1" />
                 <action id="-24" name="Move to top" sid="458690077514706" type="answer_box_1" />
                 <action id="-24" name="Move to top" sid="928525028435670" type="option_1" />
+                <action id="-24" name="Move to top" sid="564691818974875" type="timer" />
+                <action id="-2" name="Set Y" sid="422585940406503" type="timer">
+                    <param id="0" name="Y">512</param>
+                </action>
+                <action id="-1" name="Set X" sid="518649481364529" type="timer">
+                    <param id="0" name="X">736</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="302211434765439">
