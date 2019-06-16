@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>main_sheet</name>
     <events>
+        <variable constant="0" name="change" sid="523609119429955" static="0" type="number">0</variable>
         <include>transitition</include>
         <event-block sid="751754475740072">
             <conditions>
@@ -12,6 +13,10 @@
                 <action id="0" name="Call function" sid="451976427242949" type="Function">
                     <param id="0" name="Name">&quot;set_transition_state&quot;</param>
                     <param id="1" name="Parameter {n}">&quot;off&quot;</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="705154136238168" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Opacity">0</param>
                 </action>
             </actions>
         </event-block>
@@ -63,13 +68,6 @@
                 <action id="-16" name="Wait" sid="888468542655601" type="System">
                     <param id="0" name="Seconds">0.2</param>
                 </action>
-                <action id="0" name="Call function" sid="856353081753858" type="Function">
-                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;on&quot;</param>
-                </action>
-                <action id="-16" name="Wait" sid="231812036593895" type="System">
-                    <param id="0" name="Seconds">1.0</param>
-                </action>
             </actions>
             <sub-events>
                 <event-block sid="617610994651689">
@@ -79,50 +77,69 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">2</param>
                         </condition>
+                        <condition id="-6" name="Every X seconds" sid="217749870120672" type="System">
+                            <param id="0" name="Interval (seconds)">0.05</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-2" name="Go to layout" sid="452652289840612" type="System">
-                            <param id="0" name="Layout">load_game_1</param>
+                        <action id="-9" name="Set value" sid="774436801255954" type="System">
+                            <param id="0" name="Variable">change</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block disabled="1" sid="170615754360382">
+        <event-block sid="430747465511750">
             <conditions>
-                <condition id="17" name="On tap object" sid="191893192603288" type="Touch">
-                    <param id="0" name="Object">buttons</param>
+                <condition id="-6" name="Every X seconds" sid="656817610877782" type="System">
+                    <param id="0" name="Interval (seconds)">0.05</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="499590969904030" type="System">
+                    <param id="0" name="Variable">change</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="303159263515376" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Opacity">100</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="5" name="Set frame" sid="618686287287171" type="buttons">
-                    <param id="0" name="Frame number">buttons.AnimationFrame + 1</param>
+                <action id="-18" name="Set layer opacity" sid="182873598810434" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Opacity">LayerOpacity(1) + 10</param>
                 </action>
-                <action id="-16" name="Wait" sid="247915111102336" type="System">
-                    <param id="0" name="Seconds">0.2</param>
-                </action>
-                <action id="5" name="Set frame" sid="199730924176882" type="buttons">
-                    <param id="0" name="Frame number">buttons.AnimationFrame - 1</param>
-                </action>
-                <action id="-16" name="Wait" sid="474891966511818" type="System">
-                    <param id="0" name="Seconds">0.2</param>
+                <action id="-18" name="Set layer opacity" sid="755537980097403" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Opacity">LayerOpacity(0) - 5</param>
                 </action>
             </actions>
-            <sub-events>
-                <event-block disabled="1" sid="501800283961475">
-                    <conditions>
-                        <condition id="3" name="Compare frame" sid="938024388010735" type="buttons">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Number">2</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-2" name="Go to layout" sid="756795472495905" type="System">
-                            <param id="0" name="Layout">load_game_1</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
+        </event-block>
+        <event-block sid="529947988642781">
+            <conditions>
+                <condition id="17" name="On tap object" sid="737442275786006" type="Touch">
+                    <param id="0" name="Object">math</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="213480810906808" type="System">
+                    <param id="0" name="Variable">change</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="856353081753858" type="Function">
+                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;on&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="231812036593895" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="452652289840612" type="System">
+                    <param id="0" name="Layout">load_game_1</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
