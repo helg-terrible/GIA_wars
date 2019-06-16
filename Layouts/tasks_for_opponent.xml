@@ -65,7 +65,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1072</x>
+                        <x>1120</x>
                         <y>224</y>
                         <z>0</z>
                         <width>64</width>
@@ -91,7 +91,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1072</x>
+                        <x>1120</x>
                         <y>320</y>
                         <z>0</z>
                         <width>64</width>
@@ -117,7 +117,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1072</x>
+                        <x>1120</x>
                         <y>416</y>
                         <z>0</z>
                         <width>64</width>
@@ -143,7 +143,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1072</x>
+                        <x>1120</x>
                         <y>512</y>
                         <z>0</z>
                         <width>64</width>
@@ -169,7 +169,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1072</x>
+                        <x>1120</x>
                         <y>608</y>
                         <z>0</z>
                         <width>64</width>
@@ -195,7 +195,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1216</x>
+                        <x>1232</x>
                         <y>224</y>
                         <z>0</z>
                         <width>64</width>
@@ -221,7 +221,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1216</x>
+                        <x>1232</x>
                         <y>320</y>
                         <z>0</z>
                         <width>64</width>
@@ -247,7 +247,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1216</x>
+                        <x>1232</x>
                         <y>416</y>
                         <z>0</z>
                         <width>64</width>
@@ -273,7 +273,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1216</x>
+                        <x>1232</x>
                         <y>512</y>
                         <z>0</z>
                         <width>64</width>
@@ -299,7 +299,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1216</x>
+                        <x>1232</x>
                         <y>608</y>
                         <z>0</z>
                         <width>64</width>
@@ -330,7 +330,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1136</x>
+                        <x>1168</x>
                         <y>208</y>
                         <z>0</z>
                         <width>32</width>
@@ -361,7 +361,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1136</x>
+                        <x>1168</x>
                         <y>304</y>
                         <z>0</z>
                         <width>32</width>
@@ -392,7 +392,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1136</x>
+                        <x>1168</x>
                         <y>400</y>
                         <z>0</z>
                         <width>32</width>
@@ -423,7 +423,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1136</x>
+                        <x>1168</x>
                         <y>496</y>
                         <z>0</z>
                         <width>32</width>
@@ -454,7 +454,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1136</x>
+                        <x>1168</x>
                         <y>592</y>
                         <z>0</z>
                         <width>32</width>
@@ -476,7 +476,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1152</x>
+                        <x>1184</x>
                         <y>704</y>
                         <z>0</z>
                         <width>96</width>
@@ -489,6 +489,24 @@
                     </world>
                 </instance>
             </instances>
+            <effects />
+        </layer>
+        <layer name="transition" sid="649821919595136">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
             <effects />
         </layer>
     </layers>

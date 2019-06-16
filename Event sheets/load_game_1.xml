@@ -3,6 +3,18 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>load_game_1</name>
     <events>
+        <include>transitition</include>
+        <event-block sid="653432962708956">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="640156057570030" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="254021505677934" type="Function">
+                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;off&quot;</param>
+                </action>
+            </actions>
+        </event-block>
         <variable constant="0" name="opacity" sid="971964937872261" static="0" type="number">0</variable>
         <event-block sid="523381842124546">
             <conditions>

@@ -40,12 +40,12 @@
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
-        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Loader style">Percentage text</prop>
         <prop name="Orientations">Any</prop>
         <prop name="Pause on unfocus">No</prop>
-        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Physics engine">Box2D web</prop>
         <prop name="Preload sounds">Yes</prop>
-        <prop name="Preview browser">(default)</prop>
+        <prop name="Preview browser">Chrome</prop>
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
@@ -500,6 +500,112 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="buttons2" sid="632468393293334">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="number" sid="770187181136994" type="number" />
+            </instance-variables>
+            <effects>
+                <effect-type name="Brightness">
+                    <effect id="brightness" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="8" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="795384521236233" speed="0">
+                    <frame duration="1" hotspotX="0.501292" hotspotY="0.505882" original-source="C:\Users\zrf\Documents\c2\Заг2.png">
+                        <collision-poly>
+                            <point x="0.0367647" y="0.142857" />
+                            <point x="0.5" y="0.219048" />
+                            <point x="0.933824" y="0.257143" />
+                            <point x="0.958333" y="0.495238" />
+                            <point x="0.921569" y="0.695238" />
+                            <point x="0.5" y="0.67619" />
+                            <point x="0.0759804" y="0.704762" />
+                            <point x="0.0318627" y="0.495238" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ2\Одиночная игра.png">
+                        <collision-poly>
+                            <point x="0.0321543" y="0.208333" />
+                            <point x="0.5" y="0.322917" />
+                            <point x="0.958199" y="0.270833" />
+                            <point x="0.969453" y="0.5" />
+                            <point x="0.961415" y="0.75" />
+                            <point x="0.5" y="0.53125" />
+                            <point x="0.0434084" y="0.71875" />
+                            <point x="0.0192926" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\zrf\Documents\c2\КНОПКИ2\Дуэль.png">
+                        <collision-poly>
+                            <point x="0.0737705" y="0.1875" />
+                            <point x="0.5" y="0.135417" />
+                            <point x="0.872951" y="0.322917" />
+                            <point x="0.942623" y="0.5" />
+                            <point x="0.897541" y="0.739583" />
+                            <point x="0.5" y="0.75" />
+                            <point x="0.057377" y="0.854167" />
+                            <point x="0.0491803" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.50108" hotspotY="0.505882" original-source="C:\Users\zrf\Documents\c2\КНОПКИ2\Тренировка.png">
+                        <collision-poly>
+                            <point x="0.0287474" y="0.164706" />
+                            <point x="0.971253" y="0.164706" />
+                            <point x="0.971253" y="0.835294" />
+                            <point x="0.0287474" y="0.835294" />
+                            <point x="0.0431212" y="0.494118" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.50505" original-source="C:\Users\zrf\Documents\c2\КНОПКИ2\Рейтинг.png">
+                        <collision-poly>
+                            <point x="0.0838509" y="0.272727" />
+                            <point x="0.916149" y="0.272727" />
+                            <point x="0.881988" y="0.494949" />
+                            <point x="0.878882" y="0.606061" />
+                            <point x="0.5" y="0.868687" />
+                            <point x="0.0434783" y="0.858586" />
+                            <point x="0.0372671" y="0.494949" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505882" original-source="C:\Users\zrf\Documents\c2\КНОПКИ2\Статистика.png">
+                        <collision-poly>
+                            <point x="0.0429185" y="0.235294" />
+                            <point x="0.5" y="0.235294" />
+                            <point x="0.944206" y="0.305882" />
+                            <point x="0.969957" y="0.835294" />
+                            <point x="0.5" y="0.776471" />
+                            <point x="0.0429185" y="0.764706" />
+                            <point x="0.0257511" y="0.494118" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504951" original-source="C:\Users\zrf\Documents\c2\КНОПКИ2\Профиль.png">
+                        <collision-poly>
+                            <point x="0.0564972" y="0.19802" />
+                            <point x="0.5" y="0.118812" />
+                            <point x="0.892655" y="0.376238" />
+                            <point x="0.957627" y="0.49505" />
+                            <point x="0.932203" y="0.762376" />
+                            <point x="0.5" y="0.861386" />
+                            <point x="0.0621469" y="0.782178" />
+                            <point x="0.0338983" y="0.49505" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501027" hotspotY="0.505882" original-source="C:\Users\zrf\Documents\c2\КНОПКИ2\Упражнения.png">
+                        <collision-poly>
+                            <point x="0.0287474" y="0.164706" />
+                            <point x="0.971253" y="0.164706" />
+                            <point x="0.971253" y="0.835294" />
+                            <point x="0.0287474" y="0.835294" />
+                            <point x="0.0431212" y="0.494118" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text4" sid="380165516675709">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -516,6 +622,7 @@
         <event-sheet>global_settings.xml</event-sheet>
         <event-sheet>load_game_1.xml</event-sheet>
         <event-sheet>game.xml</event-sheet>
+        <event-sheet>transitition.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="1">

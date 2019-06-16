@@ -10,16 +10,16 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="2">logo</layout>
-        <layout order="3">main</layout>
+        <layout order="1">main</layout>
+        <layout order="2">game</layout>
+        <layout order="3">load_game_1</layout>
         <layout order="5">tasks_for_opponent</layout>
-        <layout order="10">game</layout>
-        <layout order="9">load_game_1</layout>
-        <event-sheet order="1">global_settings</event-sheet>
+        <layout order="7">logo</layout>
         <event-sheet order="4">main_sheet</event-sheet>
         <event-sheet order="6">tasks_for_opponent</event-sheet>
-        <event-sheet order="7">logo_sheet</event-sheet>
-        <event-sheet active="1" order="8">load_game_1</event-sheet>
+        <event-sheet order="8">load_game_1</event-sheet>
+        <event-sheet order="9">logo_sheet</event-sheet>
+        <event-sheet active="1" order="10">transitition</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -29,10 +29,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </properties>
     <families-expanded root="1" />
     <folders-expanded>
-        <folder expanded="1" path="object-folder/" />
+        <folder expanded="0" path="object-folder/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="file-folder/" />
+        <folder expanded="0" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
@@ -53,5 +53,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/vs2/" />
         <folder expanded="1" path="animation-folder/Sprite11/" />
         <folder expanded="1" path="animation-folder/Sprite12/" />
+        <folder expanded="1" path="animation-folder/buttons2/" />
     </folders-expanded>
 </c2uistate>

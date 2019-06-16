@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>transitition</name>
+    <events>
+        <variable comment="Плавный переход" constant="0" name="transition" sid="475623111443310" static="0" type="text">off</variable>
+        <comment></comment>
+        <comment>для работы необходимо подключить этот лист</comment>
+        <comment></comment>
+        <event-block sid="315156988454484">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="948102577570964" type="System">
+                    <param id="0" name="Variable">transition</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;off&quot;</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="105429152251844" type="System">
+                    <param id="0" name="First value">LayerOpacity(&quot;transition&quot;)</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="525937084237025" type="System">
+                    <param id="0" name="Interval (seconds)">0.05</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Set layer opacity" sid="123648417238394" type="System">
+                    <param id="0" name="Layer">&quot;transition&quot;</param>
+                    <param id="1" name="Opacity">LayerOpacity(&quot;transition&quot;) - 10</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block sid="737475047097186">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="645655120436950" type="System">
+                    <param id="0" name="Variable">transition</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;on&quot;</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="141367390123985" type="System">
+                    <param id="0" name="First value">LayerOpacity(&quot;transition&quot;)</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">100</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="464569477434101" type="System">
+                    <param id="0" name="Interval (seconds)">0.05</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Set layer opacity" sid="228652118864184" type="System">
+                    <param id="0" name="Layer">&quot;transition&quot;</param>
+                    <param id="1" name="Opacity">LayerOpacity(&quot;transition&quot;) + 10</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <comment>Функция устанавливает значение глобальной переменной transition</comment>
+        <comment>параметр 0, тип текст. Состояния переменной.  on - включаем переход, проиходит плавное затемнение фона, off - выключаем переход, происходит плавное осветление</comment>
+        <comment>если передано off, тогда прозрачность слоя &quot;transition&quot; устанавливается в 100, если &quot;on&quot;, тогда 0. </comment>
+        <event-block sid="740828103114807">
+            <conditions>
+                <condition id="0" name="On function" sid="709424190808531" type="Function">
+                    <param id="0" name="Name">&quot;set_transition_state&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="192368320163370" type="System">
+                    <param id="0" name="Variable">transition</param>
+                    <param id="1" name="Value">function.Param(0)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="179222536465236">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="945617140638139" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;off&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Set layer opacity" sid="965164638543189" type="System">
+                            <param id="0" name="Layer">&quot;transition&quot;</param>
+                            <param id="1" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
